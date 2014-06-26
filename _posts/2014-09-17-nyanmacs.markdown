@@ -1,0 +1,16 @@
+---
+layout:    post
+title:     "NyanMacs"
+date:      2014-09-17 12:45:42+00:00
+tags:      [emacs]
+permalink: /blog/2014/9/17/nyanmacs
+published: true
+author:
+    name: Gergely Polonkai
+    email: gergely@polonkai.eu
+---
+
+I was a Vi/ViM user for years. For several reasons I had to change to Emacs
+now and then. And then, I found
+[this](http://nyan-mode.buildsomethingamazing.com). I surrender. Emacs is
+just better. (And it’s working even in plain text mode without graphics)

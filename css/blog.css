@@ -1,0 +1,26 @@
+/*
+    Document   : blog
+    Created on : 2012.09.14., 14:53:34
+    Author     : polonkai.gergely
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.post {
+    margin-bottom: 2em;
+}
+
+p.article-date {
+	text-indent: 0;
+	font-size: 80%;
+	color: #7f7f7f;
+}
+
+.paginator {
+    margin: .5em 0;
+}
+
+.plusone-container {
+    margin-left: 1em;
+    display: inline;
+}

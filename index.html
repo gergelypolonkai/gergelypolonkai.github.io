@@ -1,0 +1,18 @@
+---
+layout: default
+title: Gergely Polonkai
+---
+<div class="container">
+    <div class="row">
+        <hr class="blog-hr">
+        <h2>Blog posts</h2>
+        <hr class="blog-hr">
+    </div>
+</div>
+
+<div class="container-fluid">
+    {% for post in site.posts limit: 6 %}
+    {% capture counter %}{% cycle 'odd', 'even' %}{% endcapture %}
+    {% include blog-post-list.html %}
+    {% endfor %}
+</div>

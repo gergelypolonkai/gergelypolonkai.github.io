@@ -1,0 +1,17 @@
+<nav>
+    <ul class="pagination">
+        <li{% if paginator.previous_page == null %} class="disabled"{% endif %}>
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous page">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+{% for page in (1...paginator.total_pages) %}
+        <li{% if paginator.page == page %} class="active"{% endif %}><a href="{% if page == 1 %}{{ '/blog' | prepend: site.baseurl }}{% else %}{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}{% endif %}">{{ page }}</a></li>
+{% endfor %}
+        <li{% if paginator.next_page == null %} class="disabled"{% endif %}>
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next page">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

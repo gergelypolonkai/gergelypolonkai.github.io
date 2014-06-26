@@ -1,0 +1,29 @@
+    <article class="col-sm-5 col-md-6 blog_post">
+        <ul class="list-inline">
+            <li class="col-md-8">
+                <header>
+                    <h4><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h4>
+                    <div class="pull-left">
+                        <span>Posted by : <a class="link_orange" href="mailto:{{post.author.email}}"><span class="txt_orange">{{post.author.name}}</span></a></span>
+                    </div>
+                    <div class="pull-right">
+                        <span class="post-date">{{post.date | date: "%b %-d, %Y"}}</span>
+                        <span class="post-time">{{post.date | date: "%H:%M" }}</span>
+                    </div>
+                </header>
+                <div class="clearfix"> </div>
+                <p class="blog_text">{{post.excerpt}}</p>
+                <footer>
+                    <p class="article-tags">
+                        Tags:
+{% for tag in post.tags %}
+                        <span class="blog-tag"><a href="{{tag | prepend: '/blog/tag/' | prepend: site.baseurl}}">{{ tag }}</a></span>
+{% endfor %}
+                    </p>
+                </footer>
+            <li>
+        </ul>
+    </article>
+{% if counter == 'even' %}
+    <div class="clearfix"></div>
+{% endif %}
