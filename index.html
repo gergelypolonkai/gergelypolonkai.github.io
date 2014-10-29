@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Symbolon</title>
+    <style>
+      div#holder {
+        overflow: auto;
+        height: 320px;
+      }
+
+      div.card {
+        float: left;
+        margin-right: 1em;
+      }
+
+      p {
+        text-align: center;
+        border-bottom: 1px solid black;
+      }
+    </style>
+    <script src="js/jquery-2.1.1.min.js"></script>
+  </head>
+  <body>
+    <select>
+      <option value="">Mind / All</option>
+      <option value="aries">Kos / Aries</option>
+      <option value="taurus">Bika / Taurus</option>
+      <option value="gemini">Ikrek / Gemini</option>
+      <option value="cancer">Rák / Cancer</option>
+      <option value="leo">Oroszlán / Leo</option>
+      <option value="virgo">Szűz / Virgo</option>
+      <option value="libra">Mérleg / Libra</option>
+      <option value="scorpio">Skorpió / Scorpio</option>
+      <option value="sagittarius">Nyilas / Sagittarius</option>
+      <option value="capricorn">Bak / Capricorn</option>
+      <option value="aquarius">Vízöntő / Aquarius</option>
+      <option value="pisces">Halak / Pisces</option>
+    </select>
+
+    <select>
+      <option value="">Mind / All</option>
+      <option value="aries">Kos / Aries</option>
+      <option value="taurus">Bika / Taurus</option>
+      <option value="gemini">Ikrek / Gemini</option>
+      <option value="cancer">Rák / Cancer</option>
+      <option value="leo">Oroszlán / Leo</option>
+      <option value="virgo">Szűz / Virgo</option>
+      <option value="libra">Mérleg / Libra</option>
+      <option value="scorpio">Skorpió / Scorpio</option>
+      <option value="sagittarius">Nyilas / Sagittarius</option>
+      <option value="capricorn">Bak / Capricorn</option>
+      <option value="aquarius">Vízöntő / Aquarius</option>
+      <option value="pisces">Halak / Pisces</option>
+    </select>
+
+    <hr>
+
+    <div id="holder">
+      <div class="card aries">
+        <img src="images/01.jpg" alt="">
+        <p class="cim">A Harcos</p>
+      </div>
+
+      <div class="card taurus">
+        <img src="images/02.jpg" alt="">
+        <p class="cim">A Szerető</p>
+      </div>
+
+      <div class="card gemini">
+        <img src="images/03.jpg" alt="">
+        <p class="cim">A Közvetítő</p>
+      </div>
+
+      <div class="card cancer">
+        <img src="images/04.jpg" alt="">
+        <p class="cim">Az Anya</p>
+      </div>
+
+      <div class="card leo">
+        <img src="images/05.jpg" alt="">
+        <p class="cim">Az Egó</p>
+      </div>
+
+      <div class="card virgo">
+        <img src="images/06.jpg" alt="">
+        <p class="cim">A Szolgáló</p>
+      </div>
+
+      <div class="card libra">
+        <img src="images/07.jpg" alt="">
+        <p class="cim">A Partner</p>
+      </div>
+
+      <div class="card scorpio">
+        <img src="images/08.jpg" alt="">
+        <p class="cim">A Csábító</p>
+      </div>
+
+      <div class="card sagittarius">
+        <img src="images/09.jpg" alt="">
+        <p class="cim">A Prédikátor</p>
+      </div>
+
+      <div class="card capricorn">
+        <img src="images/10.jpg" alt="">
+        <p class="cim">A Mester</p>
+      </div>
+
+      <div class="card aquarius">
+        <img src="images/11.jpg" alt="">
+        <p class="cim">Az Udvari Bolond</p>
+      </div>
+
+      <div class="card pisces">
+        <img src="images/12.jpg" alt="">
+        <p class="cim">Az Angyal</p>
+      </div>
+
+      <div class="card cancer aries">
+        <img src="images/13.jpg" alt="">
+        <p class="cim">A Dac</p>
+      </div>
+
+      <div class="card cancer taurus">
+        <img src="images/14.jpg" alt="">
+        <p class="cim">Éva két arca</p>
+      </div>
+
+      <div class="card cancer gemini">
+        <img src="images/15.jpg" alt="">
+        <p class="cim">Kibeszélés</p>
+      </div>
+
+      <div class="card cancer leo">
+        <img src="images/16.jpg" alt="">
+        <p class="cim">Összeférhetetlenség</p>
+      </div>
+
+      <div class="card cancer virgo">
+        <img src="images/17.jpg" alt="">
+        <p class="cim">A Törődés</p>
+      </div>
+
+      <div class="card cancer libra">
+        <img src="images/18.jpg" alt="">
+        <p class="cim">A Család</p>
+      </div>
+
+      <div class="card cancer scorpio">
+        <img src="images/19.jpg" alt="">
+        <p class="cim">Az Elvetélés</p>
+      </div>
+
+      <div class="card cancer sagittarius">
+        <img src="images/20.jpg" alt="">
+        <p class="cim">Mnemoszüné</p>
+      </div>
+
+      <div class="card cancer capricorn">
+        <img src="images/21.jpg" alt="">
+        <p class="cim">A Jégkirálynő</p>
+      </div>
+
+      <div class="card cancer aquarius">
+        <img src="images/22.jpg" alt="">
+        <p class="cim">A Szabadulás</p>
+      </div>
+
+      <div class="card cancer pisces">
+        <img src="images/23.jpg" alt="">
+        <p class="cim">Csipkerózsika szendergése</p>
+      </div>
+
+      <div class="card leo aries">
+        <img src="images/24.jpg" alt="">
+        <p class="cim">A Csata</p>
+      </div>
+
+      <div class="card leo taurus">
+        <img src="images/25.jpg" alt="">
+        <p class="cim">A Királynő</p>
+      </div>
+
+      <div class="card leo gemini">
+        <img src="images/26.jpg" alt="">
+        <p class="cim">A Színész</p>
+      </div>
+
+      <div class="card leo virgo">
+        <img src="images/27.jpg" alt="">
+        <p class="cim">A Beteg Király</p>
+      </div>
+
+      <div class="card leo libra">
+        <img src="images/28.jpg" alt="">
+        <p class="cim">Az Esküvő</p>
+      </div>
+
+      <div class="card leo scorpio">
+        <img src="images/29.jpg" alt="">
+        <p class="cim">A Mágus</p>
+      </div>
+
+      <div class="card leo sagittarius">
+        <img src="images/30.jpg" alt="">
+        <p class="cim">Fortuna</p>
+      </div>
+
+      <div class="card leo capricorn">
+        <img src="images/31.jpg" alt="">
+        <p class="cim">A Teher</p>
+      </div>
+
+      <div class="card leo aquarius">
+        <img src="images/32.jpg" alt="">
+        <p class="cim">A Zuhanás</p>
+      </div>
+
+      <div class="card leo pisces">
+        <img src="images/33.jpg" alt="">
+        <p class="cim">A Visszavonulás</p>
+      </div>
+
+      <div class="card aries taurus">
+        <img src="images/34.jpg" alt="">
+        <p class="cim">Erosz</p>
+      </div>
+
+      <div class="card aries gemini">
+        <img src="images/35.jpg" alt="">
+        <p class="cim">A Kaloda</p>
+      </div>
+
+      <div class="card aries virgo">
+        <img src="images/36.jpg" alt="">
+        <p class="cim">Bűnösség</p>
+      </div>
+
+      <div class="card aries libra">
+        <img src="images/37.jpg" alt="">
+        <p class="cim">Viszály</p>
+      </div>
+
+      <div class="card aries scorpio">
+        <img src="images/38.jpg" alt="">
+        <p class="cim">A Vámpír</p>
+      </div>
+
+      <div class="card aries sagittarius">
+        <img src="images/39.jpg" alt="">
+        <p class="cim">A Keresztes Lovag</p>
+      </div>
+
+      <div class="card aries capricorn">
+        <img src="images/40.jpg" alt="">
+        <p class="cim">A Meghiúsulás</p>
+      </div>
+
+      <div class="card aries aquarius">
+        <img src="images/41.jpg" alt="">
+        <p class="cim">A Bajkeverő</p>
+      </div>
+
+      <div class="card aries pisces">
+        <img src="images/42.jpg" alt="">
+        <p class="cim">A Szent Őrült</p>
+      </div>
+
+      <div class="card taurus gemini">
+        <img src="images/43.jpg" alt="">
+        <p class="cim">Az Aranyszívű Leány</p>
+      </div>
+
+      <div class="card taurus virgo">
+        <img src="images/44.jpg" alt="">
+        <p class="cim">A Ragaszkodás</p>
+      </div>
+
+      <div class="card taurus libra">
+        <img src="images/45.jpg" alt="">
+        <p class="cim">Az Aranykalitka</p>
+      </div>
+
+      <div class="card taurus scorpio">
+        <img src="images/46.jpg" alt="">
+        <p class="cim">A Bábu</p>
+      </div>
+
+      <div class="card taurus sagittarius">
+        <img src="images/47.jpg" alt="">
+        <p class="cim">Anyag és Szellem</p>
+      </div>
+
+      <div class="card taurus capricorn">
+        <img src="images/48.jpg" alt="">
+        <p class="cim">A Teremtés felelősségérzete</p>
+      </div>
+
+      <div class="card taurus aquarius">
+        <img src="images/49.jpg" alt="">
+        <p class="cim">A Búcsú</p>
+      </div>
+
+      <div class="card taurus pisces">
+        <img src="images/50.jpg" alt="">
+        <p class="cim">A Szellem Kertje</p>
+      </div>
+
+      <div class="card gemini virgo">
+        <img src="images/51.jpg" alt="">
+        <p class="cim">A Stratéga</p>
+      </div>
+
+      <div class="card gemini libra">
+        <img src="images/52.jpg" alt="">
+        <p class="cim">Hiúság Vására</p>
+      </div>
+
+      <div class="card gemini scorpio">
+        <img src="images/53.jpg" alt="">
+        <p class="cim">A Furulyás</p>
+      </div>
+
+      <div class="card gemini sagittarius">
+        <img src="images/54.jpg" alt="">
+        <p class="cim">Mester és Tanítvány</p>
+      </div>
+
+      <div class="card gemini capricorn">
+        <img src="images/55.jpg" alt="">
+        <p class="cim">A Megtörtség</p>
+      </div>
+
+      <div class="card gemini aquarius">
+        <img src="images/56.jpg" alt="">
+        <p class="cim">Az Álmodozó</p>
+      </div>
+
+      <div class="card gemini pisces">
+        <img src="images/57.jpg" alt="">
+        <p class="cim">A Hallgatás</p>
+      </div>
+
+      <div class="card virgo libra">
+        <img src="images/58.jpg" alt="">
+        <p class="cim">A kapcsolat hétköznapjai</p>
+      </div>
+
+      <div class="card virgo scorpio">
+        <img src="images/59.jpg" alt="">
+        <p class="cim">Az Önostorozás</p>
+      </div>
+
+      <div class="card virgo sagittarius">
+        <img src="images/60.jpg" alt="">
+        <p class="cim">Az Inkvizíció</p>
+      </div>
+
+      <div class="card virgo capricorn">
+        <img src="images/61.jpg" alt="">
+        <p class="cim">A Félelem</p>
+      </div>
+
+      <div class="card virgo aquarius">
+        <img src="images/62.jpg" alt="">
+        <p class="cim">A Fúriák</p>
+      </div>
+
+      <div class="card virgo pisces">
+        <img src="images/63.jpg" alt="">
+        <p class="cim">A Becsapás</p>
+      </div>
+
+      <div class="card libra scorpio">
+        <img src="images/64.jpg" alt="">
+        <p class="cim">A Végzetes Kapcsolat</p>
+      </div>
+
+      <div class="card libra sagittarius">
+        <img src="images/65.jpg" alt="">
+        <p class="cim">A Symbolon</p>
+      </div>
+
+      <div class="card libra capricorn">
+        <img src="images/66.jpg" alt="">
+        <p class="cim">A Gyász</p>
+      </div>
+
+      <div class="card libra aquarius">
+        <img src="images/67.jpg" alt="">
+        <p class="cim">Az Elválás</p>
+      </div>
+
+      <div class="card libra pisces">
+        <img src="images/68.jpg" alt="">
+        <p class="cim">A Király Két Gyermeke</p>
+      </div>
+
+      <div class="card scorpio sagittarius">
+        <img src="images/69.jpg" alt="">
+        <p class="cim">A Fekete Mise</p>
+      </div>
+
+      <div class="card scorpio capricorn">
+        <img src="images/70.jpg" alt="">
+        <p class="cim">A Depresszió</p>
+      </div>
+
+      <div class="card scorpio aquarius">
+        <img src="images/71.jpg" alt="">
+        <p class="cim">A Főnixmadár</p>
+      </div>
+
+      <div class="card scorpio pisces">
+        <img src="images/72.jpg" alt="">
+        <p class="cim">Az (ál)szent ragyogás</p>
+      </div>
+
+      <div class="card sagittarius capricorn">
+        <img src="images/73.jpg" alt="">
+        <p class="cim">A Gyónás</p>
+      </div>
+
+      <div class="card sagittarius aquarius">
+        <img src="images/74.jpg" alt="">
+        <p class="cim">Az óriásugrás</p>
+      </div>
+
+      <div class="card sagittarius pisces">
+        <img src="images/75.jpg" alt="">
+        <p class="cim">Püthia</p>
+      </div>
+
+      <div class="card capricorn aquarius">
+        <img src="images/76.jpg" alt="">
+        <p class="cim">Rabság</p>
+      </div>
+
+      <div class="card capricorn pisces">
+        <img src="images/77.jpg" alt="">
+        <p class="cim">A Végzet</p>
+      </div>
+
+      <div class="card aquarius pisces">
+        <img src="images/78.jpg" alt="">
+        <p class="cim">A Grál Kérdése</p>
+      </div>
+    </div>
+
+    <script>
+      $('select').change(function () {
+        var classes = new Array();
+        var single_card = false;
+
+        $('select').each(function (i, e) {
+          sign = $(e).val();
+
+
+          if (sign != '') {
+            classes.push($(e).val());
+          }
+        });
+
+        if (classes.length == 2 && (classes[0] == classes[1])) {
+          single_card = true;
+        }
+
+        classes = classes.filter(function (e, i, arr) {
+          return arr.lastIndexOf(e) === i;
+        });
+
+        selector = '';
+
+        $.map(classes, function (e) {
+          selector += '.' + e;
+        });
+
+        if (single_card) {
+          selector = '.' + classes[0] + '[class="card ' + classes[0] + '"]';
+        }
+
+        console.log(selector);
+
+        $('div.card').show();
+        if (selector != '') {
+          $('div.card').not(selector).hide();
+        }
+      });
+
+      function resize_holder() {
+        var winheight = $(window).height();
+        var holdertop = $('#holder').position().top;
+        $('#holder').height(winheight - holdertop - 10);
+      }
+
+      $(document).ready(function () {
+        resize_holder();
+      });
+
+      $(window).resize(function () {
+        resize_holder();
+      });
+    </script>
+  </body>
+</html>
