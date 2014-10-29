@@ -60,6 +60,8 @@
       <option value="pisces">Halak / Pisces</option>
     </select>
 
+    <button id="draw">Húzz egyet / Draw one</button>
+
     <hr>
 
     <div id="holder">
@@ -514,6 +516,18 @@
 
       $(window).resize(function () {
         resize_holder();
+      });
+
+      $('#draw').click(function () {
+        count = $('div.card').length;
+
+        draw_num = Math.floor(Math.random() * count) + 1;
+        num_str  = (draw_num < 10) ? '0' + draw_num : draw_num;
+        draw_id  = '#card_' + num_str;
+
+        console.log(draw_id);
+
+        $(draw_id).click();
       });
     </script>
   </body>
