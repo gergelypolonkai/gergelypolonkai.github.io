@@ -12,9 +12,8 @@ otherwise stated. Please use them with this statement in your mind. If
 you use anything, please put a backlink on your site to the given
 article(s) or the main page.
 
-The social media icons in the contact menu are from
-[![komodomedia.com]({{'/images/komodomedia_azure_16.png' | prepend: site.baseurl}})
-komodomedia.com](http://komodomedia.com).
+The social media icons in the contact menu are made by [Rogie
+King](http://rog.ie/).
 
 Some design ideas, like the arrows under the menu items are from a
 friend, Judit Pásti.
