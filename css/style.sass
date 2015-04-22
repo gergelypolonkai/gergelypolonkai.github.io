@@ -2,18 +2,36 @@
 ---
 
 $main-font: sans-serif
-$page-background: #ffffff
-$content-background: #ffffff
-$content-text: #000000
+$page-background: #333333
+$content-background: #f2e5c8
+$content-text: #544240
 $header-background: #4d4d4d
 $header-text: #ffffff
 $menu-background: #f18137
 $menu-text: #ffffff
 $footer-text: #7f7f7f
+$well-background: #cda97d
+$link-color: #018cb0
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+  color: $content-text
+
+a
+  color: $link-color
+
+#main-container
+  background-color: $content-background
 
 body
   background-color: $page-background
   margin: 0
+
+  .well, .jumbotron
+    background-color: $well-background
+    color: $content-text
+
+    small
+      color: $content-background
 
   #about-well-image
     img
