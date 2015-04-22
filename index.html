@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Gergely Polonkai
+post_listing: true
 ---
 <div class="container">
     <div class="row">
@@ -10,9 +11,6 @@ title: Gergely Polonkai
     </div>
 </div>
 
-<div class="container-fluid">
-    {% for post in site.posts limit: 6 %}
-    {% capture counter %}{% cycle 'odd', 'even' %}{% endcapture %}
-    {% include blog-post-list.html %}
-    {% endfor %}
-</div>
+{% assign posts = site.posts %}
+{% assign post_limit = 6 %}
+{% include post-list.html %}

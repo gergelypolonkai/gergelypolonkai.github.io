@@ -5,6 +5,8 @@
 # or layout: keywords, the script will include them in the front
 # matter.
 
+layout="posts-by-tag"
+
 for tag in `grep -h ^tags: _posts/* | sed -e 's/^tags:      \[//' -e 's/\]$//' -e 's/, /\n/g' | sort | uniq`
 do
     tag_file="blog/tag/${tag}.html"
@@ -13,7 +15,7 @@ do
     then
         cat <<EOF > $tag_file
 ---
-layout: posts_by_tag
+layout: $layout
 tag:    $tag
 ---
 EOF
@@ -25,7 +27,7 @@ EOF
 
         if ! grep "^layout: " $tag_file &> /dev/null
         then
-            sed -i "0,/---/! s/---/layout: posts_by_tag\\n---/" $tag_file
+            sed -i "0,/---/! s/---/layout: $layout\\n---/" $tag_file
         fi
     fi
 done

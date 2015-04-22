@@ -1,13 +1,13 @@
 ---
 layout: default
+post_listing: true
 ---
 {{content}}
 <h3>Articles under this tag</h3>
+
 {% if site.tags[page.tag] %}
-{% for post in site.tags[page.tag] %}
-{% include blog-post-list.html %}
-{% endfor %}
-<div class="clearfix"></div>
+{%     assign posts = site.tags[page.tag] %}
+{%     include post-list.html %}
 {% else %}
 No posts with this tag.
 {% endif %}

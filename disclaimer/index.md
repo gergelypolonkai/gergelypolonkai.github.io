@@ -13,7 +13,7 @@ you use anything, please put a backlink on your site to the given
 article(s) or the main page.
 
 The social media icons in the contact menu are from
-[![komodomedia.com]({{site_url}}/images/komodomedia_azure_16.png)
+[![komodomedia.com]({{'/images/komodomedia_azure_16.png' | prepend: site.baseurl}})
 komodomedia.com](http://komodomedia.com).
 
 Some design ideas, like the arrows under the menu items are from a

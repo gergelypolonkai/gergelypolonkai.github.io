@@ -1,0 +1,9 @@
+<div class="container-fluid">
+{% for post in posts limit: post_limit %}
+{%     capture counter %}{% cycle 'odd', 'even' %}{% endcapture %}
+{%     include blog-post.html %}
+{%     if counter == 'even' %}
+    <div class="clearfix"></div>
+{%     endif %}
+{% endfor %}
+</div>

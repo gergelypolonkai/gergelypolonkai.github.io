@@ -1,36 +1,20 @@
 ---
 layout: default
+render_post: true
 ---
-<div class="post">
-    <header class="post-header">
-        <h3>{{ page.title }} <div class="plusone-container"><div class="g-plusone" data-annotation="inline" data-size="small" data-width="300"></div></div></h3>
-        <p class="meta">{{ page.date | date: "%b %-d, %Y :: %H:%M" }}{% if page.author %} • {{ page.author.name }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-    </header>
+{% assign post = page %}
+{% include blog-post.html %}
+<div class="g-plus" data-action="share" data-height="15"></div>
 
-    <article class="post-content">
-        {{ content }}
-    </article>
-
-    <footer>
-        <p class="article-tags">
-            Tags:
-            {% for tag in page.tags %}
-            <a href="{{tag | prepend: '/blog/tag/' | prepend: site.baseurl}}" class="label label-default">{{ tag }}</a>
-            {% endfor %}
-        </p>
-        <div class="g-plus" data-action="share" data-height="15"></div>
-
-        <nav>
-            <ul class="pager">
+<nav>
+    <ul class="pager">
 {% if page.previous %}
-                <li><a href="{{page.previous.url | prepend: site.baseurl}}">&larr; {{page.previous.title}}</a></li>
+        <li><a href="{{page.previous.url | prepend: site.baseurl}}">&larr; {{page.previous.title}}</a></li>
 {% endif %}
 {% if page.next %}
-                <li><a href="{{page.next.url | prepend: site.baseurl}}">{{page.next.title}} &rarr;</a></li>
+        <li><a href="{{page.next.url | prepend: site.baseurl}}">{{page.next.title}} &rarr;</a></li>
 {% endif %}
-            </ul>
-        </nav>
-    </footer>
+    </ul>
+</nav>
 
-    {% include disqus.html %}
-</div>
+{% include disqus.html %}

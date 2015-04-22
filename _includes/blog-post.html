@@ -1,0 +1,48 @@
+<article class="{% if page.post_listing %}col-sm-5 col-md-6 {% endif%}post">
+{% if page.post_listing %}
+    <ul class="list-inline">
+        <li class="col-md-8">
+{% endif %}
+            <header class="post-header">
+                <h3>
+{% if page.post_listing %}
+<a href="{{post.url | prepend: site.baseurl}}">
+{% endif %}
+{{post.title}}
+{% if page.post_listing %}
+</a>
+{% endif %}
+{% if page.render_post %}
+                    <div class="plusone-container"><div class="g-plusone" data-annotation="inline" data-size="small" data-width="300"></div></div>
+{% endif %}
+                </h3>
+                <div class="pull-left">
+                    Posted by : {{post.author.name}}
+                </div>
+                <div class="pull-right">
+                    {{post.date | date: "%b %-d, %Y :: %H:%M"}}
+                </div>
+                <div class="clearfix"></div>
+            </header>
+
+            <main>
+{% if page.render_post %}
+                {{content}}
+{% else %}
+                {{post.excerpt}}
+{% endif %}
+            </main>
+
+            <footer>
+                <p class="article-tags">
+                    Tags:
+{% for tag in post.tags %}
+{%     include tag-link.html %}
+{% endfor %}
+                </p>
+            </footer>
+{% if page.post_listing %}
+        </li>
+    </ul>
+{% endif %}
+</article>
