@@ -12,8 +12,8 @@ author:
 
 I’m a bit fed up that I had to install [MySQL](http://www.mysql.com/) on my
 server to have [Wordpress](http://wordpress.org/) working, so I’ve Googled a
-bit to find a solution for my pain. I found this:
-[http://codex.wordpress.org/Using_Alternative_Databases]. I don’t know when
+bit to find a solution for my pain. I found
+[this](http://codex.wordpress.org/Using_Alternative_Databases). I don’t know when
 this post was written, but I think it’s a bit out of date. I mean come on, PDO
 is the part of PHP for ages now, and they say adding a DBAL to the dependencies
 would be a project as large as (or larger than) WP itself. Well,
