@@ -1,0 +1,30 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{site.title | xml_escape}}</title>
+        <description>{{site.description | xml_escape}}</description>
+        <link>{{site.baseurl | prepend: site.url}}</link>
+        <atom:link href="{{'/blog/atom.xml' | prepend: site.baseurl | prepend: site.url}}" rel="self" type="application/rss+xml" />
+        <lastBuildDate>{{site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %z"}}</lastBuildDate>
+        <pubDate>{{site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %z"}}</pubDate>
+        <ttl>7200</ttl>
+        <language>en</language>
+        <image>
+            <title>Gergely Polonkai</title>
+            <url>{{'/images/profile.png' | prepend: site.baseurl | prepend: site.url}}</url>
+            <link>{{'/' | prepend: site.baseurl | prepend: site.url}}</link>
+        </image>
+{% for post in site.posts limit:10 %}
+        <item>
+            <title>{{post.title | xml_escape}}</title>
+            <link>{{post.url | prepend: site.baseurl | prepend: site.url}}</link>
+            <comments>{{post.url | prepend: site.baseurl | prepend: site.url}}#comments</comments>
+            <pubDate>{{post.date | date: "%a, %d %b %Y %H:%M:%S %z"}}</pubDate>
+            <description>{{post.excerpt | xml_escape}}</description>
+            <guid isPermaLink="true">{{post.url | prepend: site.baseurl | prepend: site.url}}</guid>
+        </item>
+{% endfor %}
+    </channel>
+</rss>
