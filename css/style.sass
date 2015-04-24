@@ -3,15 +3,16 @@
 
 $main-font: sans-serif
 $page-background: #333333
-$content-background: #f2e5c8
+$content-background: #ffffff
 $content-text: #544240
 $header-background: #4d4d4d
 $header-text: #ffffff
 $menu-background: #f18137
 $menu-text: #ffffff
 $footer-text: #7f7f7f
-$well-background: #cda97d
+$well-background: #ccc
 $link-color: #018cb0
+$light-color: #666
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   color: $content-text
@@ -25,16 +26,47 @@ a
 .popover
   max-width: 100%
 
+.navbar-inverse
+  background-color: $menu-background
+
+  a.navbar-brand
+    color: $menu-text
+
+  .navbar-nav
+    li
+      a
+        color: $menu-text
+        font-weight: bold
+
+    li.open
+      background-color: $menu-background
+
+      a.dropdown-toggle
+        background-color: $menu-background
+
+    ul.dropdown-menu
+      background-color: $content-background
+      color: $content-text
+
+      li
+        background-color: $content-background
+        color: $content-text
+
+        a
+          background-color: $content-background
+          color: $content-text
+          font-weight: normal
+
 article.post
   div.meta
     font-size: 80%
-    color: #aaa
+    color: $light-color
     margin-top: .8em
     margin-bottom: .5em
 
 body
   background-color: $page-background
-  margin: 0
+  margin: 50px 0 0 0
 
   .well, .jumbotron
     background-color: $well-background
@@ -42,6 +74,9 @@ body
 
     small
       color: $content-background
+
+  .jumbotron
+    margin-top: 20px
 
   #about-well-image
     img
