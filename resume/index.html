@@ -2,8 +2,7 @@
 layout: default
 title: Resume
 ---
-<h3>Resume <span id="keywords-button">[ want some keywords only? click
-this! ]</span></h3>
+<h3>Resume <a id="keywords-button" data-toggle="popover" data-placement="bottom" role="button" tabindex="0" data-trigger="focus">[ want some keywords only? click this! ]</a></h3>
 
 <div itemscope itemtype="http://schema.org/Person">
     <p>
@@ -229,54 +228,41 @@ this! ]</span></h3>
 <div id="keywords"><span id="keywords-close"></span><span id="keywords-list"></span></div>
 
 <script type="text/javascript">
-Array.prototype.unique = function() {
-    var unique = [];
+    var keywords = null;
 
-    for (var i = 0; i < this.length; i++) {
-        if (unique.indexOf(this[i]) == -1) {
-            unique.push(this[i]);
-        }
-    }
+    $(function() {
+        $('[data-toggle="popover"]').popover({
+            'html': true,
+            'content': function(){
+                if (keywords == null) {
+                    keyword_tags = $('.keyword');
+                    keywords = new Array();
 
-    return unique;
-};
+                    for (i = 0; i < keyword_tags.length; i++) {
+                        tag = keyword_tags[i];
 
-keyword_tags = $('.keyword');
-keywords = new Array();
+                        if ($(tag).attr('title')) {
+                            kw = $(tag).attr('title');
+                        } else {
+                            kw = $(tag).html();
+                        }
 
-for (i = 0; i < keyword_tags.length; i++) {
-    tag = keyword_tags[i];
+                        first_letter = kw.charAt(0);
+                        remainder = kw.slice(1);
 
-    if ($(tag).attr('title')) {
-        kw = $(tag).attr('title');
-    } else {
-        kw = $(tag).html();
-    }
+                        if (!$(tag).hasClass('noupper')) {
+                            first_letter = first_letter.toUpperCase();
+                        }
 
-    first_letter = kw.charAt(0);
-    remainder = kw.slice(1);
+                        kw = '<span class="keyword-first-letter">' + first_letter + '</span>' + remainder;
 
-    if (!$(tag).hasClass('noupper')) {
-        first_letter = first_letter.toUpperCase();
-    }
+                        keywords.push(kw);
+                    }
+                }
 
-    kw = '<span class="keyword-first-letter">' + first_letter + '</span>' + remainder;
-
-    keywords.push(kw);
-
-}
-
-$('#keywords-list').html(keywords.unique().sort(function(a, b) { if (a.toLowerCase() < b.toLowerCase()) return -1; else if (a.toLowerCase() > b.toLowerCase()) return 1; else return 0; }).join(', '));
-
-$('#keywords-button').click(function(e) {
-    $('#keywords').css({
-        top: e.pageY + 10,
-        left: e.pageX - 2
+                keywords = $.grep(keywords, function(el, index){return index === $.inArray(el, keywords);});
+                return keywords.sort(function(a, b) { if (a.toLowerCase() < b.toLowerCase()) return -1; else if (a.toLowerCase() > b.toLowerCase()) return 1; else return 0; }).join(', ');
+            }
+        });
     });
-    $('#keywords').fadeIn();
-});
-
-$('#keywords-close').click(function() {
-    $('#keywords').fadeOut();
-});
 </script>
