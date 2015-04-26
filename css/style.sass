@@ -90,8 +90,24 @@ body
     background-color: #ddd
 
   .highlight
-    background-color: #b5b5b5
+    background-color: #fdf6e3
+    color: #586e75
     padding: 10px
+
+    /* Line Numbers */
+    /* Make line numbers unselectable: excludes line numbers from */
+    /* copy-paste user ops */
+    .lineno
+      color: #93a1a1
+      -webkit-user-select: none
+      -moz-user-select: none
+      -o-user-select: none
+
+    .lineno::-moz-selection /* Mozilla specific */
+      background-color: transparent
+
+    .lineno::selection /* Other major browsers */
+      background-color: transparent
 
     .code-title
       text-indent: 0 !important
@@ -123,46 +139,67 @@ body
       code
         /* Comment */
         .c
-          color: #999988
+          color: #93a1a1
           font-style: italic
 
         /* Error */
         .err
-          color: #a61717
-          background-color: #e3d2d2
+          color: #586e75
+
+        /* Generic */
+        .g
+          color: #586e75
 
         /* Keyword */
         .k
+          color: #859900
           font-weight: bold
+
+        /* Literal */
+        .l
+          color: #586e75
+
+        /* Name */
+        .n
+          color: #586e75
 
         /* Operator */
         .o
+          color: #859900
           font-weight: bold
+
+        /* Other */
+        .x
+          color: #cb4b16
+
+        /* Punctuation */
+        .p
+          color: #586e75
 
         /* Comment.Multiline */
         .cm
-          color: #999988
+          color: #93a1a1
           font-style: italic
 
         /* Comment.Preproc */
         .cp
-          color: #999999
+          color: #859900
           font-weight: bold
 
         /* Comment.Single */
         .c1
-          color: #999988
+          color: #93a1a1
           font-style: italic
 
         /* Comment.Special */
         .cs
-          color: #999999
+          color: #859900
           font-weight: bold
           font-style: italic
 
         /* Generic.Deleted */
         .gd
-          color: #000000
+          color: #2aa198
           background-color: #ffdddd
 
           /* Generic.Deleted.Specific */
@@ -172,218 +209,229 @@ body
 
         /* Generic.Emph */
         .ge
+          color: #586e75
           font-style: italic
 
         /* Generic.Error */
         .gr
-          color: #aa0000
+          color: #dc322f
 
         /* Generic.Heading */
         .gh
-          color: #999999
+          color: #cb4b16
 
         /* Generic.Inserted */
         .gi
-          color: #000000
-          background-color: #ddffdd
-
-          /* Generic.Inserted.Specific */
-          .x
-            color: #000000
-            background-color: #aaffaa
+          color: #859900
 
         /* Generic.Output */
         .go
-          color: #888888
+          color: #586e75
 
         /* Generic.Prompt */
         .gp
-          color: #555555
+          color: #586e75
 
         /* Generic.Strong */
         .gs
+          color: #586e75
           font-weight: bold
 
         /* Generic.Subheading */
         .gu
-          color: #aaaaaa
+          color: #cb4b16
 
         /* Generic.Traceback */
         .gt
-          color: #aa0000
+          color: #586e75
 
         /* Keyword.Constant */
         .kc
+          color: #cb4b16
           font-weight: bold
 
         /* Keyword.Declaration */
         .kd
+          color: #268bd2
           font-weight: bold
+
+        /* Keyword.Namespace */
+        .kn
+          color: #859900
 
         /* Keyword.Pseudo */
         .kp
+          color: #859900
           font-weight: bold
 
         /* Keyword.Reserved */
         .kr
+          color: #268bd2
           font-weight: bold
 
         /* Keyword.Type */
         .kt
-          color: #445588
+          color: #dc322f
           font-weight: bold
+
+        /* Literal.Date */
+        .ld
+          color: #586e75
 
         /* Literal.Number */
         .m
-          color: #009999
+          color: #2aa198
 
         /* Literal.String */
         .s
-          color: #d14
+          color: #2aa198
 
         /* Name.Attribute */
         .na
-          color: #008080
+          color: #586e75
 
         /* Name.Builtin */
         .nb
-          color: #0086B3
+          color: #b58900
 
         /* Name.Class */
         .nc
-          color: #445588
+          color: #268bd2
           font-weight: bold
 
         /* Name.Constant */
         .no
-          color: #008080
+          color: #cb4b16
+
+        /* Name.Decorator */
+        .nd
+          color: #268bd2
 
         /* Name.Entity */
         .ni
-          color: #800080
+          color: #cb4b16
 
         /* Name.Exception */
         .ne
-          color: #990000
+          color: #cb4b16
           font-weight: bold
 
         /* Name.Function */
         .nf
-          color: #990000
+          color: #268bd2
           font-weight: bold
+
+        /* Name.Label */
+        .nl
+          color: #586e75
 
         /* Name.Namespace */
         .nn
-          color: #555555
+          color: #586e75
+
+        /* Name.Other */
+        .nx
+          color: #586e75
+
+        /* Name.Property */
+        .py
+          color: #586e75
 
         /* Name.Tag */
         .nt
-          color: #000080
+          color: #268bd2
 
         /* Name.Variable */
         .nv
-          color: #008080
+          color: #268bd2
 
         /* Operator.Word */
         .ow
-          font-weight: bold
+          color: #859900
 
         /* Text.Whitespace */
         .w
-          color: #bbbbbb
+          color: #586e75
 
         /* Literal.Number.Float */
         .mf
-          color: #009999
+          color: #2aa198
 
         /* Literal.Number.Hex */
         .mh
-          color: #009999
+          color: #2aa198
 
         /* Literal.Number.Integer */
         .mi
-          color: #009999
+          color: #2aa198
 
         /* Literal.Number.Oct */
         .mo
-          color: #009999
+          color: #2aa198
 
         /* Literal.String.Backtick */
         .sb
-          color: #d14
+          color: #93a1a1
 
         /* Literal.String.Char */
         .sc
-          color: #d14
+          color: #2aa198
 
         /* Literal.String.Doc */
         .sd
-          color: #d14
+          color: #586e75
 
         /* Literal.String.Double */
         .s2
-          color: #d14
+          color: #2aa198
 
         /* Literal.String.Escape */
         .se
-          color: #d14
+          color: #cb4b16
 
         /* Literal.String.Heredoc */
         .sh
-          color: #d14
+          color: #586e75
 
         /* Literal.String.Interpol */
         .si
-          color: #d14
+          color: #2aa198
 
         /* Literal.String.Other */
         .sx
-          color: #d14
+          color: #2aa198
 
         /* Literal.String.Regex */
         .sr
-          color: #009926
+          color: #dc322f
 
         /* Literal.String.Single */
         .s1
-          color: #d14
+          color: #2aa198
 
         /* Literal.String.Symbol */
         .ss
-          color: #990073
+          color: #2aa198
 
         /* Name.Builtin.Pseudo */
         .bp
-          color: #999999
+          color: #268bd2
 
         /* Name.Variable.Class */
         .vc
-          color: #008080
+          color: #268bd2
 
         /* Name.Variable.Global */
         .vg
-          color: #008080
+          color: #268bd2
 
         /* Name.Variable.Instance */
         .vi
-          color: #008080
+          color: #268bd2
 
         /* Literal.Number.Integer.Long */
         .il
-          color: #009999
-
-        /* Make line numbers unselectable: excludes line numbers from */
-        /* copy-paste user ops */
-        .lineno
-          -webkit-user-select: none
-          -moz-user-select: none
-          -o-user-select: none
-
-        .lineno::-moz-selection /* Mozilla specific */
-          background-color: transparent
-
-        .lineno::selection /* Other major browsers */
-          background-color: transparent
+          color: #2aa198
 
 
   #keywords-button
