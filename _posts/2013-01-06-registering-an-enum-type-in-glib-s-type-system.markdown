@@ -28,3 +28,5 @@ Still, it can be made more perfect by using the
 [glib-mkenums](http://developer.gnome.org/gobject/stable/glib-mkenums.html)
 tool. I will read through the GLib Makefiles tomorrow for some hints on
 this.
+
+Edit: you can find the glib-mkenums solution [here]({% post_url 2014-08-16-registering-an-enum-type-in-glib-glib-mkenums-magic %}).
