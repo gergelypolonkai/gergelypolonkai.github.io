@@ -43,9 +43,4 @@ his local repository with the same technique).
 [This StackOverflow answer](http://stackoverflow.com/a/17153598/1305139)
 suggests the very same, but with some aliases:
 
-{% highlight ini %}
-
-[alias]
-    bisect-fixed = bisect bad
-    bisect-unfixed = bisect good
-{% endhighlight %}
+{% gist gergelypolonkai/a98f4aab84659d60364e %}

@@ -13,44 +13,10 @@ author:
 Few days ago I have struggled with a problem using Symfony2 configuration. I
 wanted to add the following kind of configuration to `config.yml`:
 
-{% highlight yaml %}
-acme_demo:
-    transitions:
-        - { hc_cba: 180 }
-        - { cba_hc: -1 }
-{% endhighlight %}
+{% gist gergelypolonkai/30440e25f7a447730064 config.yml %}
 
 The problem was that the stuff under `transitions` is dynamic, so those
 `hc_cba` and `cba_hc` tags can be pretty much anything. After hitting many
 errors, I came to the solution:
 
-{% highlight php %}
-<?php
-$rootNode
-    ->children()
-        ->arrayNode('state_machine')
-            ->requiresAtLeastOneElement()
-            ->beforeNormalization()
-                ->ifArray()
-                    ->then(function($values) {
-                        $ret = array();
-
-                        foreach ($values as $value) {
-                            foreach ($value as $transition => $time) {
-                                $ret[] = array('transition' => $transition, 'time' => e);
-                            }
-                        }
-
-                        return $ret;
-                    })
-                ->end()
-                ->prototype('array')
-                ->children()
-                    ->scalarNode('transition')->end()
-                    ->scalarNode('time')->end()
-                ->end()
-            ->end()
-        ->end()
-    ->end()
-;
-{% endhighlight %}
+{% gist gergelypolonkai/30440e25f7a447730064 DynarrayConfiguration.php %}

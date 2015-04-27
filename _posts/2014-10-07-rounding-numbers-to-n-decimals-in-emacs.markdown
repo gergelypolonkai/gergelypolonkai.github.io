@@ -16,25 +16,7 @@ displayed in small size, so this amount of precision was irrelevant, and
 these numbers took almost half of my SVG images’ size. So I created an
 Elisp defun to round these numbers to 2 decimals:
 
-{% highlight common-lisp %}
-(defun get-number-at-point ()
-  (interactive)
-  (skip-chars-backward "0123456789.-")
-  (or (looking-at "[0123456789.-]+")
-      (error "No number at point"))
-  (string-to-number (match-string 0)))
-
-(defun round-number-at-point-to-decimals (decimal-count)
-  (interactive "NDecimal count: ")
-  (let ((mult (expt 10 decimal-count)))
-    (replace-match (number-to-string
-              (/
-               (fround
-                (*
-                 mult
-                 (get-number-at-point)))
-                mult)))))
-{% endhighlight %}
+{% gist gergelypolonkai/9c721ceda6d3079b4f05 %}
 
 This finds the first digit of the number under point (the cursor), and
 reduces its digits to the given amount (or the number given with `C-u`). It

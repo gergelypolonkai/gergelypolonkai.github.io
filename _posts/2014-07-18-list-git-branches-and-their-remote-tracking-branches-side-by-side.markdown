@@ -20,38 +20,7 @@ does the work for me. Its only requirements are git (of course), and the
 `column` command, which is pretty obviously present on every POSIX
 compliant systems (even OSX).
 
-{% highlight sh %}
-#! /bin/sh
-
-COLUMN=`which column 2> /dev/null`
-if test -z $COLUMN
-then
-    echo "`column' is not found in PATH. Cannot continue."
-    exit 1
-fi
-
-current_branch=`git rev-parse --abbrev-ref HEAD`
-
-for branch in $(git for-each-ref --shell --format='%(refname)' refs/heads | sed -e s/^\'refs\\/heads\\///-e s/\'$//)
-do
-    remote=`git config branch.$branch.remote`
-    merge=`git config branch.$branch.merge | sed -e 's/^refs\/heads\///'`
-
-    [ x"$current_branch" == x"$branch" ] && echo -n '*'
-
-    echo -n "$branch"
-
-    if ! test -z $merge
-    then
-        echo -en "\t"
-        echo -n $remote
-        echo -n /
-        echo -n $merge
-    fi
-
-    echo
-done | $COLUMN -t
-{% endhighlight %}
+{% gist gergelypolonkai/8af6a3e86b57dd4c250e %}
 
 I just put it in my path, and `git branches-with-remotes` does the work!
 

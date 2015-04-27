@@ -17,14 +17,6 @@ hosting the page yet. Until we get it in our hands, I did a trick.
 I enabled `mod_rewrite`, `mod_proxy` and `mod_proxy_http`, then added the following
 lines to my apache config:
 
-{% highlight apache %}
-RewriteEngine on
-RewriteRule ^/$ http://172.16.72.131:8080/ [QSA,L,P]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^/(.*) http://172.16.72.131:8080/$1 [QSA,L,P]
-
-Order allow,deny
-Allow from all
-{% endhighlight %}
+{% gist gergelypolonkai/47680bfa44eb29708f20 %}
 
 I’m not totally sure it’s actually secure, but it works for now.

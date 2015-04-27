@@ -24,9 +24,7 @@ own role hierarchy service that implements `RoleHierarchyInterface`.
 So far so good, first tests. It soon turned out that if `User::getRoles()`
 returns a `DoctrineCollection` as it does by default, then the standard
 
-{% highlight php %}
-$this->get('security.context')->isGranted('ROLE_ADMIN');
-{% endhighlight %}
+{% gist gergelypolonkai/883ace4f35e440f6fe0f WhatEver.php %}
 
 doesn’t work. I know, it should not be hard coded, as my roles and permission
 tables are dynamic, I have just tested. So I fixed my `User` entity so
@@ -37,24 +35,12 @@ return the original collection, but I think it will never be used.
 After that, I had to implement some more features so I put this task away.
 Then, I tried to create my first ACL.
 
-{% highlight php %}
-$securityIdentity = new RoleSecurityIdentity('ROLE_ADMIN');
-$objectIdentity = new ObjectIdentity('newsClass', 'Acme\\DemoBundle\\Entity\\News');
-$acl = $aclProvider->createAcl($objectIdentity);
-
-$acl->insertClassAce($securityIdentity, MaskBuilder::MASK_OWNER);
-$aclProvider->updateAcl($acl);
-{% endhighlight %}
+{% gist gergelypolonkai/883ace4f35e440f6fe0f WhatEver2.php %}
 
 I was about to check if the user who is logged in has an `OWNER` permission on
 the `User` class.
 
-{% highlight php %}
-$this->objectIdentity = new ObjectIdentity(self::OBJECT_ID, self::OBJECT_FQCN);
-if ($this->securityContext->isGranted('OWNER', $this->objectIdentity) === false) {
-    throw new AccessDeniedException('You don’t have the required permissions!');
-}
-{% endhighlight %}
+{% gist gergelypolonkai/883ace4f35e440f6fe0f WhatEver3.php %}
 
 The ACL was defined based on a role, so everyone who had the `ROLE_ADMIN` role
 should gain access to the user listing page. But they didn’t. It took several

@@ -17,10 +17,4 @@ the same name.
 
 To change this, you will have to modify the `config.yml` file like this:
 
-{% highlight yaml %}
-session:
-    name: SiteSpecificSessionName
-    lifetime: 3600
-{% endhighlight %}
-
-I hope it helps some of you.
+{% gist gergelypolonkai/c695670ecca2809f7c93 %}
