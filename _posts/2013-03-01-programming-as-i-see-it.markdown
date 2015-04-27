@@ -9,19 +9,15 @@ author:
     email: gergely@polonkai.eu
 ---
 
-Since my age of around 11, I write code. I began with BASIC, which is, well,
-the most basic language I have ever seen. Simply writing
-
-{% highlight basic %}
-10 PRINT "Hello World!"
-{% endhighlight %}
-
-does the job (with Assembly it would be tens of lines as I recall). Then I
-moved to Pascal, then Delphi (which is basically the same thing). The next step
-was a bit longer, as I started learning more languages after this, like Perl
-(for dynamic web pages), C (for desktop applications), TCL (for eggdrop
-programming. Yes, I might have been a weird kid), PHP (again, for dynamic web
-pages. It was becoming mainstream back then).
+Since my age of around 11, I write code. I began with BASIC, which is,
+well, the most basic language I have ever seen. Simply writing
+<code>10 PRINT "Hello World!"</code> does the job (with Assembly it
+would be tens of lines as I recall). Then I moved to Pascal, then
+Delphi (which is basically the same thing). The next step was a bit
+longer, as I started learning more languages after this, like Perl
+(for dynamic web pages), C (for desktop applications), TCL (for
+eggdrop programming. Yes, I might have been a weird kid), PHP (again,
+for dynamic web pages. It was becoming mainstream back then).
 
 Many of my classmates looked down on me, as they thought I was a geek (hell I
 was, but I wouldn’t have confessed it then), and called me a nerd. For a few
@@ -64,4 +60,3 @@ spin).
 ####  Art
 
 ####  Magic
-
