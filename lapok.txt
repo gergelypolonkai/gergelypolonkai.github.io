@@ -1,0 +1,78 @@
+01	A Harcos	aries
+02	A Szerető	taurus
+03	A Közvetítő	gemini
+04	Az Anya	cancer
+05	Az Egó	leo
+06	A Szolgáló	virgo
+07	A Partner	libra
+08	A Csábító	scorpio
+09	A Prédikátor	sagittarius
+10	A Mester	capricorn
+11	Az Udvari Bolond	aquarius
+12	Az Angyal	pisces
+13	A Dac	cancer aries
+14	Éva két arca	cancer taurus
+15	Kibeszélés	cancer gemini
+16	Összeférhetetlenség	cancer leo
+17	A Törődés	cancer virgo
+18	A Család	cancer libra
+19	Az Elvetélés	cancer scorpio
+20	Mnemoszüné	cancer sagittarius
+21	A Jégkirálynő	cancer capricorn
+22	A Szabadulás	cancer aquarius
+23	Csipkerózsika szendergése	cancer pisces
+24	A Csata	leo aries
+25	A Királynő	leo taurus
+26	A Színész	leo gemini
+27	A Beteg Király	leo virgo
+28	Az Esküvő	leo libra
+29	A Mágus	leo scorpio
+30	Fortuna	leo sagittarius
+31	A Teher	leo capricorn
+32	A Zuhanás	leo aquarius
+33	A Visszavonulás	leo pisces
+34	Erosz	aries taurus
+35	A Kaloda	aries gemini
+36	Bűnösség	
+37	Viszály	aries libra
+38	A Vámpír	aries scorpio
+39	A Keresztes Lovag	aries sagittarius
+40	A Meghiúsulás	aries capricorn
+41	A Bajkeverő	aries aquarius
+42	A Szent Őrült	aries pisces
+43	Az Aranyszívű Leány	taurus gemini
+44	A Ragaszkodás	taurus virgo
+45	Az Aranykalitka	taurus libra
+46	A Bábu	taurus scorpio
+47	Anyag és Szellem	taurus sagittarius
+48	A Teremtés felelősségérzete	taurus capricorn
+49	A Búcsú	taurus aquarius
+50	A Szellem Kertje	taurus pisces
+51	A Stratéga	gemini virgo
+52	Hiúság Vására	gemini libra
+53	A Furulyás	gemini scorpio
+54	Mester és Tanítvány	gemini sagittarius
+55	A Megtörtség	gemini capricorn
+56	Az Álmodozó	gemini aquarius
+57	A Hallgatás	gemini pisces
+58	A kapcsolat hétköznapjai	virgo libra
+59	Az Önostorozás	virgo scorpio
+60	Az Inkvizíció	virgo sagittarius
+61	A Félelem	virgo capricorn
+62	A Fúriák	virgo aquarius
+63	A Becsapás	virgo pisces
+64	A Végzetes Kapcsolat	libra scorpio
+65	A Symbolon	libra sagittarius
+66	A Gyász	libra capricorn
+67	Az Elválás	libra aquarius
+68	A Király Két Gyermeke	libra pisces
+69	A Fekete Mise	scorpio sagittarius
+70	A Depresszió	scorpio capricorn
+71	A Főnixmadár	scorpio aquarius
+72	Az (ál)szent ragyogás	scorpio pisces
+73	A Gyónás	sagittarius capricorn
+74	Az óriásugrás	sagittarius aquarius
+75	Püthia	sagittarius pisces
+76	Rabság	capricorn aquarius
+77	A Végzet	capricorn pisces
+78	A Grál Kérdése	aquarius pisces
