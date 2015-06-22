@@ -12,8 +12,8 @@ author:
 Few years ago I have signed up for a
 [Digital Ocean](https://www.digitalocean.com/) account. I used one
 single droplet for my private needs, like hosting my private Git
-repositories and my blog. However, as I don’t host anything else there
-except my blog, I decided to shut it down. My from now on, my blog is
+repositories and my blog. However, as I didn’t host anything else there
+except my blog, I decided to shut it down. From now on, my blog is
 on [GitHub Pages](https://pages.github.com/), as it provides just
 everything I need (except automatically converting my resume to
 PDF. But I can live without that.)
