@@ -21,11 +21,11 @@ mixins](http://sass-lang.com/guide#topic-6) with dynamic
 parameters. Another nice feature you get using the `border-width`
 shorthand is that you can specify less than four parameters, and the
 values will be applied on different sides of your box, so in the end
-all side will have a `border-witdh` set.
+all side will have the whole `border-width` set.
 
 I wanted to achieve the same for my `border-radius` mixin, although I
 could not start specifically with the `top` side. I decided to go with
 the top right corner for the first parameter, while trying to keep a
-sane repeting pattern. Here is the result:
+sane repeating pattern. Here is the result:
 
 {% gist gergelypolonkai/313b227434ecc5d85d7b border-radius.sass %}
