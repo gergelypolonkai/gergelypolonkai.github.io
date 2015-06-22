@@ -14,13 +14,15 @@ is [Symfony](http://symfony.com)’s
 made my life so much easier while developing with Symfony. In Django,
 of course, there is
 [get_object_or_404](https://docs.djangoproject.com/en/dev/topics/http/shortcuts/#get-object-or-404),
-For example, in one of my projects I had a view that had to resolve 6
-objects from the URL, and writing `get_object_or_404` six times is not
-what a programmer likes to do. A quick Google search gave me one
-[usable result](http://openclassrooms.com/forum/sujet/middleware-django-genre-paramconverter-doctrine)
-(in French), but it was very generalized that I cannot always
-use. Also, it was using a middleware, which may introduce performance
-issues sometimes<sup>[citation needed]</sup>. So I decided to go with decorators, and at the end, I came up with this:
+but, for example, in one of my projects I had a view that had to resolve 6(!)
+objects from the URL, and writing `get_object_or_404` six times is not what a
+programmer likes to do (yes, this view had a refactor later on). A quick Google
+search gave me one [usable
+result](http://openclassrooms.com/forum/sujet/middleware-django-genre-paramconverter-doctrine)
+(in French), but it was very generalized that I cannot always use. Also, it was
+using a middleware, which may introduce performance issues
+sometimes<sup>[citation needed]</sup>. So I decided to go with decorators, and
+at the end, I came up with this:
 
 {% gist gergelypolonkai/498a32297f39b4960ad7 helper.py %}
 
