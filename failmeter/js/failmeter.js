@@ -46,17 +46,25 @@ function update_points() {
 
     if (percent == 0) {
         failtext = 'Perfect! All signs point to succes!';
+        type = 'success';
     } else if (percent < 1.6) {
         failtext = 'You are probably doing okay, but you could be better.';
+        type = 'success';
     } else if (percent < 3.8) {
         failtext = 'Babies cry when your code is downloaded.';
+        type = 'info';
     } else if (percent < 5.7) {
         failtext = 'Kittens die when your code is downloaded.';
+        type = 'warning';
     } else if (percent < 8.2) {
         failtext = 'HONK HONK. THE FAILBOAT HAS ARRIVED!';
+        type = 'danger';
     } else {
         failtext = 'So much fail, your code should have its own reality show.';
+        type = 'danger';
     }
 
+    $('#failmeter').removeClass('progress-bar-success progress-bar-info progress-bar-warning progress-bar-danger');
+    $('#failmeter').addClass('progress-bar-' + type);
     $('#failtext').html(failtext);
 }
