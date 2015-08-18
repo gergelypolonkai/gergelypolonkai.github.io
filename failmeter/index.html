@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>F/OSS Fail meter</title>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/failmeter.css" type="text/css">
+
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script src="js/failmeter.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">Fail meter for F/OSS projects</a>
+                </div>
+                <div class="navbar-text" id="failtext"></div>
+                <p class="navbar-text navbar-right">
+                    Based on <a href="http://spot.livejournal.com/308370.html" class="navbar-link">this article</a>
+                </p>
+            </div>
+            <div class="progress">
+                <div id="failmeter" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                    <span id="points">0</span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h2>Size</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="1">The source code is more than 100 MB.</li>
+                <li class="list-group-item fail" data-points="1">If the source code also exceeds 100 MB when it is compressed</li>
+            </ul>
+
+            <h2>Source Control</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="2">There is no publicly available source control (e.g. cvs, svn, bzr, git)</li>
+                <li class="list-group-item">There is publicly available source control, but:
+                    <ul class="fail-list list-group">
+                        <li class="list-group-item fail" data-points="1">There is no web viewer for it</li>
+                        <li class="list-group-item fail" data-points="1">There is no documentation on how to use it for new users</li>
+                        <li class="list-group-item fail" data-points="6">You've written your own source control for this code</li>
+                        <li class="list-group-item fail" data-points="10">You don't actually use the existing source control</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Building From Source</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="4">There is no documentation on how to build from source</li>
+                <li class="list-group-item fail" data-points="2">Documentation exists on how to build from source, but it doesn't work</li>
+                <li class="list-group-item">Your source is configured…
+                    <ul class="list-group fail-list choose-one">
+                        <li class="list-group-item fail" data-points="2">…with a handwritten shell script</li>
+                        <li class="list-group-item fail" data-points="4">…by editing flat text config files</li>
+                        <li class="list-group-item fail" data-points="6">…by editing code header files manually</li>
+                        <li class="list-group-item fail" data-points="10">Your source isn't configurable</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">You source builds with…
+                    <ul class="list-group fail-list choose-one">
+                        <li class="list-group-item fail" data-points="2">…something that isn't GNU Make</li>
+                        <li class="list-group-item fail" data-points="10">…a third-party proprietary build tools</li>
+                        <li class="list-group-item fail" data-points="20">…something you wrote for this code</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Bundling</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="4">Your source only comes with other code projects that it depends on</li>
+                <li class="list-group-item fail" data-points="2">Your source code cannot be built without first building the bundled code bits</li>
+                <li class="list-group-item fail" data-points="8">You have modified those other bundled code bits</li>
+            </ul>
+
+            <h2>Libraries</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="4">Your code only builds static libraries</li>
+                <li class="list-group-item fail" data-points="4">Your code can build shared libraries, but only unversioned ones</li>
+                <li class="list-group-item fail" data-points="4">Your source does not try to use system libraries if present</li>
+            </ul>
+
+            <h2>System Install</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="2">Your code tries to install into /opt or /usr/local without explicitly telling it to do so</li>
+                <li class="list-group-item fail" data-points="4">Your code has no "make install"</li>
+                <li class="list-group-item fail" data-points="6">Your code doesn't work outside of the source directory</li>
+            </ul>
+
+            <h2>Code Oddities</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="1">Your code uses Windows line breaks ("DOS format" files)</li>
+                <li class="list-group-item fail" data-points="4">Your code depends on specific compiler feature functionality</li>
+                <li class="list-group-item fail" data-points="10">Your code depends on specific compiler bugs</li>
+                <li class="list-group-item fail" data-points="20">Your code depends on Microsoft Visual Anything</li>
+            </ul>
+
+            <h2>Communication</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="1">Your project does not announce releases on a mailing list</li>
+                <li class="list-group-item fail" data-points="2">Your project does not have a mailing list</li>
+                <li class="list-group-item fail" data-points="4">Your project does not have a bug tracker</li>
+                <li class="list-group-item fail" data-points="10">Your project does not have a website</li>
+                <li class="list-group-item fail" data-points="20">Your project is sourceforge vaporware</li>
+            </ul>
+
+            <h2>Releases</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="2">Your project does not do sanely versioned releases (Major, Minor)</li>
+                <li class="list-group-item fail" data-points="4">Your project does not do versioned releases</li>
+                <li class="list-group-item fail" data-points="10">Your project does not do releases</li>
+                <li class="list-group-item fail" data-points="20">Your project only does releases as attachments in web forum posts</li>
+                <li class="list-group-item">Your releases are <em>only</em> in
+                    <ul class="list-group choose-one">
+                        <li class="list-group-item fail" data-points="1">.zip format</li>
+                        <li class="list-group-item fail" data-points="2">OSX .zip format</li>
+                        <li class="list-group-item fail" data-points="4">.rar format</li>
+                        <li class="list-group-item fail" data-points="10">.arj format</li>
+                        <li class="list-group-item fail" data-points="20">an encapsulation format that you invented</li>
+                    </ul>
+                </li>
+                <li class="list-group-item fail" data-points="2">Your release does not unpack into a versioned top-level directory (e.g. <code>glibc-2.4.2/</code>)</li>
+                <li class="list-group-item fail" data-points="5">Your release does not unpack into a top-level directory (e.g. <code>glibc/</code>)</li>
+                <li class="list-group-item fail" data-points="10">Your release unpacks into an absurd number of directories (e.g. <code>home/johndoe/glibc-svn/tarball/glibc/src/</code>)</li>
+            </ul>
+
+            <h2>History</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="2">Your code is a fork of another project</li>
+                <li class="list-group-item fail" data-points="10">Your primary developers were not involved with the parent project</li>
+                <li class="list-group-item">Until open sourcing it, your code was proprietary for:
+                    <ul class="list-group choose-one">
+                        <li class="list-group-item fail" data-points="2">1-2 years</li>
+                        <li class="list-group-item fail" data-points="4">3-5 years</li>
+                        <li class="list-group-item fail" data-points="6">6-10 years</li>
+                        <li class="list-group-item fail" data-points="10">10+ years</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Licensing</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="2">Your code does not have per-file licensing</li>
+                <li class="list-group-item fail" data-points="4">Your code contains inherent license incompatibilities</li>
+                <li class="list-group-item fail" data-points="6">Your code does not have any notice of licensing intent</li>
+                <li class="list-group-item fail" data-points="10">Your code doesn't include a copy of the license text</li>
+                <li class="list-group-item fail" data-points="20">Your code doesn't have a license</li>
+            </ul>
+
+            <h2>Documentation</h2>
+            <ul class="fail-list list-group">
+                <li class="list-group-item fail" data-points="2">Your code doesn't have a changelog</li>
+                <li class="list-group-item fail" data-points="4">Your code doesn't have any documentation</li>
+                <li class="list-group-item fail" data-points="6">Your website doesn't have any documentation</li>
+            </ul>
+
+            <script>
+                append_point_values();
+                calc_max_points();
+                update_points();
+
+                $('.fail').click(function() {
+                    parent = $(this).parent();
+
+                    if (parent.hasClass('choose-one')) {
+                        newState = !$(this).hasClass('active');
+                        parent.children().removeClass('active');
+                        if (newState) {
+                            $(this).addClass('active');
+                        } else {
+                            $(this).removeClass('active');
+                        }
+                    } else {
+                        $(this).toggleClass('active');
+                    }
+
+                    update_points();
+                });
+    </script>
+  </body>
+</html>

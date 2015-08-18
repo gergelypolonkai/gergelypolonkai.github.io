@@ -1,0 +1,12 @@
+body {
+    padding-top: 80px;
+}
+
+.fail:hover {
+    background-color: #eee;
+}
+
+.progress {
+    margin-bottom: 0;
+    background-color: #cacaca;
+}
