@@ -7,12 +7,14 @@
 
 layout="posts-by-tag"
 
-for tag in `grep -h ^tags: _posts/* | sed -e 's/^tags:      \[//' -e 's/\]$//' -e 's/, /\n/g' | sort | uniq`
+for tag in `grep -h ^tags: _posts/* | sed -re 's/^tags: +\[//' -e 's/\]$//' -e 's/, /\n/g' | sort | uniq`
 do
     tag_file="blog/tag/${tag}.html"
 
     if [ ! -f $tag_file ]
     then
+        echo "Creating $tag_file"
+
         cat <<EOF > $tag_file
 ---
 layout: $layout
@@ -20,12 +22,12 @@ tag:    $tag
 ---
 EOF
     else
-        if ! grep "^tag:    ${tag}$" $tag_file &> /dev/null
+        if ! egrep "^tag: +${tag}$" $tag_file 2>&1 > /dev/null
         then
             sed -i "0,/---/! s/---/tag:    $tag\\n---/" $tag_file
         fi
 
-        if ! grep "^layout: " $tag_file &> /dev/null
+        if ! egrep "^layout: +" $tag_file 2>&1 > /dev/null
         then
             sed -i "0,/---/! s/---/layout: $layout\\n---/" $tag_file
         fi
