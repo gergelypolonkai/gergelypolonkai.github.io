@@ -87,17 +87,17 @@ not always) consist of two strings of letters, separated by dots (e.g.
 polonkai.eu, gmail.com, my-very-long-domain.co.uk, etc.), and a hostname is
 a domain name occasionally prefixed with something (e.g. **www**.gmail.com,
 **my-server**.my-very-long-domain.co.uk, etc.) One of the main jobs of DNS
-is to keep record of hostname/address pairs. When you enter “gmail.com”
+is to keep record of hostname/address pairs. When you enter `gmail.com`
 (which happens to be both a domain name and a hostname) in your browser’s
 address bar, your computer asks the DNS service if it knows the actual
-address of the building that people call “gmail.com”. If it does, it will
+address of the building that people call `gmail.com`. If it does, it will
 happily tell your computer the number of that building.
 
 Another DNS job is to store some meta data about these domain names. For
 such meta data there are record types, one of these types being the Mail
 eXchanger, or MX. This record of a domain tells the world who is handling
-incoming mails for the specified domain. For “gmail.com” this is
-“gmail-smtp-in.l.google.com” (among others; there can be multiple records of
+incoming mails for the specified domain. For `gmail.com` this is
+`gmail-smtp-in.l.google.com` (among others; there can be multiple records of
 the same type, in which case they usually have priorities, too.)
 
 One more rule: when two computers talk to each other they use so called
@@ -189,7 +189,7 @@ Now that the MTA has passed your mail to the mailbox team (I call it a team
 instead of department because the tasks described here are usually handled
 by the MTA, too), it reads it. (Pesky little guys are these mail handling
 departments, aren’t they?) If the mailbox has some filtering rules, like “if
-XY sends me  letter, mark it as important” or “if the letter has a specific
+XY sends me a letter, mark it as important” or “if the letter has a specific
 word in its subject, put it in the XY folder”, it executes them, but the
 main point is to land the message in the actual post box of the recipient.
 
