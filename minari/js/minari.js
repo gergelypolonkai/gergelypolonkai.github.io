@@ -24,6 +24,10 @@ var monthNames = new Array(
 
 var newMoonBaseDate = new Date(2005, 4, 8, 3, 48);
 
+Date.prototype.isLeap = function() {
+    return new Date(this.getFullYear(), 1, 29).getDate() == 29;
+}
+
 Date.prototype.getJulian = function() {
     return Math.floor((this / 86400000) - (this.getTimezoneOffset()/1440) + 2440587.5);
 }
@@ -47,11 +51,8 @@ Date.prototype.getMinariDate = function() {
     today.setMilliseconds(0);
     today.setDate(today.getDate() + 11);
 
-    var leapCheck = new Date(today.getFullYear(), 1, 29);
-    var minariLeap = (leapCheck.getDate() == 29);
-
+    var minariLeap = today.isLeap();
     var doy = this.getDOY();
-
     var minariYear = today.getFullYear() - 1873;
     var minariMonth = 0;
     var minariDay = 0;
@@ -299,16 +300,25 @@ function genMonthTable(div) {
 
 function getPopoverContent() {
     list = $(this).attr('id').split('-');
-    return getDayTooltip(Number(list[1]), Number(list[2]));
+    date = getDateByMinari(year, Number(list[1]), Number(list[2]));
+    toolTip = $('<div>')
+        .addClass('date-popover')
+        .html(date.toLocaleDateString('hu-HU') + ((date.leapMorkh) ? '<br>(Két napos ünnep)' : ''));
+
+    moonPhasePic = getMoonPhase(date);
+    img = $('<img>').attr('src', 'images/' + moonPhasePic + '.png');
+    toolTip.append($('<br>')).append(img);
+
+    return toolTip;
 }
 
-function getDayTooltip(month, day) {
-    // set dayOneDate to the first day of the correct Gregorian year)
-    var dayOneDate = new Date(year + 1873, 0, 1);
+function getDateByMinari(year, month, day) {
+    // set date to the first day of the correct Gregorian year)
+    var date = new Date(year + 1873, 0, 1);
     // …now substract 11 days to get the Gregorian date of the current Minari
-    // year’s first day. dayOneDate now points to the current Minari year’s
+    // year’s first day. date now points to the current Minari year’s
     // first day (Hëdur)
-    dayOneDate.setDate(dayOneDate.getDate() - 11);
+    date.setDate(date.getDate() - 11);
 
     // Now let’s check if this Gregorian year is a leap year. We use the same
     // leap year rules as the Gregorian calendar
@@ -392,15 +402,13 @@ function getDayTooltip(month, day) {
         }
     }
 
-    dayOneDate.setDate(dayOneDate.getDate() + dayNum - 1);
+    date.setDate(date.getDate() + dayNum - 1);
+    date.leapMorkh = leapMorkh;
 
-    toolTip = $('<div>').addClass('date-popover').html(dayOneDate.toLocaleDateString('hu-HU') + ((leapMorkh) ? '<br>(Két napos ünnep)' : ''));
+    return date;
+}
 
-    moonPhasePic = getMoonPhase(dayOneDate);
-    img = $('<img>').attr('src', 'images/' + moonPhasePic + '.png');
-    toolTip.append($('<br>')).append(img);
-
-    return toolTip;
+function getDayTooltip(month, day) {
 }
 
 function yearClick(e) {
