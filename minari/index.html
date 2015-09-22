@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendar of the Minari</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Gergely Polonkai">
+
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/minari.css" />
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/minari.js"></script>
+        <script type="text/javascript">
+            var today = new Date();
+            today.setDate(today.getDate() + 11);
+            var year, thisYear;
+            year = thisYear = Number(today.getFullYear() - 1873);
+            var todayId = '#day--';
+            var base_title = document.title;
+
+            $(document).ready(function() {
+                setYear(year);
+
+                var inputActive = false;
+
+                $('#year').click(yearClick);
+
+                $(document).click(function() {
+                    if (inputActive) {
+                        inputActive = false;
+                        $('.year').html('<span id="year">' + year + '</span>');
+                        $('#year').click(yearClick);
+                    }
+                });
+
+                $('.prevYear').click(function() {
+                    setYear(year - 1);
+                });
+
+                $('.nextYear').click(function() {
+                    setYear(year + 1);
+                });
+
+                $('.day,.holiday').popover({
+                    trigger: 'hover',
+                    placement: 'top',
+                    html: true,
+                    content: getPopoverContent,
+                    container: 'body'
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="year"><span id="year">...</span></div>
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#" class="prevYear">
+                            <span aria-hidden="true">&larr;</span>
+                        </a>
+                    </li>
+                    <li class="next">
+                        <a href="#" class="nextYear">
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="holiday" id="day-0-1">Hëdur</div>
+            <div class="row">
+                <div class="month col-md-4 col-sm-1" data-month="1"></div>
+                <div class="month col-md-4 col-sm-1" data-month="2"></div>
+                <div class="month col-md-4 col-sm-1" data-month="3"></div>
+            </div>
+            <div class="holiday" id="day-0-2">Rideyy</div>
+            <div class="row">
+                <div class="month col-md-4 col-sm-1" data-month="4"></div>
+                <div class="month col-md-4 col-sm-1" data-month="5"></div>
+                <div class="month col-md-4 col-sm-1" data-month="6"></div>
+            </div>
+            <div class="holiday" id="day-0-3">Morkh</div>
+            <div class="row">
+                <div class="month col-md-4 col-sm-1" data-month="7"></div>
+                <div class="month col-md-4 col-sm-1" data-month="8"></div>
+                <div class="month col-md-4 col-sm-1" data-month="9"></div>
+            </div>
+            <div class="holiday" id="day-0-4">Khmerd</div>
+            <div class="row">
+                <div class="month col-md-4 col-sm-1" data-month="10"></div>
+                <div class="month col-md-4 col-sm-1" data-month="11"></div>
+                <div class="month col-md-4 col-sm-1" data-month="12"></div>
+            </div>
+            <div class="holiday" id="day-0-5">Chamog</div>
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#" class="prevYear">
+                            <span aria-hidden="true">&larr;</span>
+                        </a>
+                    </li>
+                    <li class="next">
+                        <a href="#" class="nextYear">
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            $('div.month').each(function() {
+                genMonthTable(this);
+            });
+        </script>
+    </body>
+</html>
