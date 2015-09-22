@@ -12,6 +12,9 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/minari.js"></script>
         <script type="text/javascript">
+            var year;
+            var inputActive = false;
+
             var today = new Date();
             today.setDate(today.getDate() + 11);
             var year, thisYear;
@@ -20,11 +23,7 @@
             var base_title = document.title;
 
             $(document).ready(function() {
-                setYear(year);
-
-                var inputActive = false;
-
-                $('#year').click(yearClick);
+                setYear();
 
                 $(document).click(function() {
                     if (inputActive) {
@@ -110,6 +109,8 @@
             </nav>
         </div>
         <script>
+            $('#year').click(yearClick);
+
             $('div.month').each(function() {
                 genMonthTable(this);
             });

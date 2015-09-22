@@ -67,3 +67,7 @@ td {
 .today {
 	background-color: red;
 }
+
+.date-popover {
+    text-align: center;
+}

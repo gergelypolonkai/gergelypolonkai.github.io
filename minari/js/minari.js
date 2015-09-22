@@ -22,6 +22,12 @@ var monthNames = new Array(
     'Rodom'
 );
 
+var newMoonBaseDate = new Date(2005, 4, 8, 3, 48);
+
+Date.prototype.getJulian = function() {
+    return Math.floor((this / 86400000) - (this.getTimezoneOffset()/1440) + 2440587.5);
+}
+
 /*
  * Add the getDOY() method to Date; it returns the day of year.
  */
@@ -148,6 +154,13 @@ Date.prototype.getMinariDate = function() {
 }
 
 function setYear(newYear) {
+    // If newYear is not set, go to current year
+    if (newYear == undefined) {
+        var today = new Date();
+        today.setDate(today.getDate() + 11);
+        newYear = Number(today.getFullYear() - 1873);
+    }
+
     year = newYear;
 
     document.title = year + ' – ' + base_title;
@@ -381,7 +394,13 @@ function getDayTooltip(month, day) {
 
     dayOneDate.setDate(dayOneDate.getDate() + dayNum - 1);
 
-    return dayOneDate.toLocaleDateString('hu-HU') + ((leapMorkh) ? '<br>(Két napos ünnep)' : '');
+    toolTip = $('<div>').addClass('date-popover').html(dayOneDate.toLocaleDateString('hu-HU') + ((leapMorkh) ? '<br>(Két napos ünnep)' : ''));
+
+    moonPhasePic = getMoonPhase(dayOneDate);
+    img = $('<img>').attr('src', 'images/' + moonPhasePic + '.png');
+    toolTip.append($('<br>')).append(img);
+
+    return toolTip;
 }
 
 function yearClick(e) {
@@ -411,4 +430,21 @@ function yearClick(e) {
             $('#year').click(yearClick);
         }
     });
+}
+
+function getMoonPhase(date) {
+    synodic = 29.53058867;
+    phasePercent = ((date.getJulian() - newMoonBaseDate.getJulian()) % synodic) / synodic;
+
+    if (phasePercent < 0) {
+        phasePercent += 1.0;
+    }
+
+    phase = Math.floor(28 * phasePercent);
+
+    if (phase == 28) {
+        phase = 0;
+    }
+
+    return phase;
 }
