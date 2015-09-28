@@ -3,9 +3,11 @@ layout: post
 title: "Writing a GNOME Shell extension"
 ---
 
-I could not find a tutorial on how to write a GNOME Shell extension,
-but I wanted to create one for my SWE GLib library to show the current
-positions of the planets. So I dug into existing (and working)
+I could not find a good tutorial on how to write a GNOME Shell
+extension. There is a so called step by step instruction list on how
+to do it, but it has its flaws, including grammar and clearance. As I
+wanted to create an extension for my SWE GLib library to show the
+current position of some planets, I dug into existing (and working)
 extensions’ source code and made up something. Comments welcome!
 
 ---
@@ -23,10 +25,11 @@ top-right “Activities” button) are actors on this stage. You can add
 practically anything to the Shell panel that you can add to a Clutter
 stage.
 
-The other thing to remember is the lifecycle of a Shell extension. There
-are two methods here: either you use an extension controller, or plain
-old Javascript functions `enable()` and `disable()`; I will go on with
-the former method.
+The other thing to remember is the lifecycle of a Shell
+extension. After calling `init()`, there are two ways forward: you
+either use a so called extension controller, or plain old JavaScript
+functions `enable()` and `disable()`; I will go on with the former
+method for reasons discussed later.
 
 ## Anatomy of an extension
 
@@ -35,6 +38,8 @@ The only thing you actually need is an `init()` function:
     function init(extensionMeta) {
         // Do whatever it takes to initialize your extension,
         // like initializing the translations.
+
+        // Then return the controller object
         return new ExtensionController(extensionMeta);
     }
 
@@ -53,7 +58,9 @@ extension is unloaded, the `disable()` method gets called.
             enable: function() {
                 this.extension = new PlanetsExtension(this.extensionMeta);
 
-                Main.panel.addToStatusArea("planets", this.extension, 0, "right");
+                Main.panel.addToStatusArea("planets",
+                                           this.extension,
+                                           0, "right");
             },
 
             disable: function() {
@@ -66,12 +73,11 @@ extension is unloaded, the `disable()` method gets called.
     }
 
 This controller will create a new instance of the `PlanetsExtension`
-class and add it to the panel’s right side when loaded. Upon unloading,
-the extension’s actor gets destroyed, together with the extension
-itself. Also, for safety measures, the extension is set to `null`.
-
-As you will see soon, `extension.actor` is not created by us, but behind
-the scenes by the Shell.
+class and add it to the panel’s right side when loaded. Upon
+unloading, the extension’s actor gets destroyed (which, as you will
+see later, gets created behind the scenes, not directly by us),
+together with the extension itself. Also, for safety measures, the
+extension is set to `null`.
 
 ## The extension
 
@@ -95,28 +101,34 @@ PlanetsExtension.prototype = {
         this.actor.add_actor(this.panelContainer);
         this.actor.add_style_class_name('panel-status-button');
 
-        this.panelLabel = new St.Label({text: 'Loading', y_align: Clutter.ActorAlign.CENTER});
+        this.panelLabel = new St.Label({
+            text: 'Loading',
+            y_align: Clutter.ActorAlign.CENTER
+        });
 
         this.panelContainer.add(this.panelLabel);
     }
 };
 ```
 
-The only parameter passed to the parent’s `_init` function is
+Here we extend the Button class of panelMenu, so we will be able to do
+some action upon activate.
+
+The only parameter passed to the parent’s `_init()` function is
 `menuAlignment`, with the value `0.0`, which is used to position the
 menu arrow. (_Note: I cannot find any documentation on this, but it
 seems that with the value `0.0`, a menu arrow is not added._)
 
 ## Loading up the extension
 
-Now with the correct import lines added:
+Now with all the necessary import lines added:
 
     const PanelMenu = imports.ui.panelMenu;
     const St = imports.gi.St;
     const Clutter = imports.gi.Clutter;
 
-The only thing to create now is the `metadata.json` file. It contains
-compatibility information and, well, some meta data.
+The only thing to create now is the `metadata.json` file, which
+contains compatibility information and, well, some meta data.
 
     {
         "shell-version": ["3.18"],
@@ -125,8 +137,8 @@ compatibility information and, well, some meta data.
         "description": "Display current planet positions"
     }
 
-As soon as this file is ready, you can restart your Shell (Alt-F2, enter
-the command `r`), and load the extension with e.g. the GNOME Tweak Tool.
-
-This little label showing the static text “Planets” is pretty boring, so
-let’s add some content.
+As soon as this file is ready, you can restart your Shell (press
+Alt-F2 and enter the command `r`), and load the extension with
+e.g. the GNOME Tweak Tool. You will see the Planets button on the
+right. This little label showing the static text “Planets”, however,
+is pretty boring, so let’s add some action.
