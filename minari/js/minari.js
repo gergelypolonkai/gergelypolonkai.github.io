@@ -8,19 +8,90 @@ var dayNames = new Array(
 );
 
 var monthNames = new Array(
-    'Mebel',
+    'Mëbel',
     'Dirann',
     'Ma’uþ',
     'Gerub',
     'Þrei',
     'Dimoc',
     'Xentor',
-    'Meðïr',
+    'Mëðïr',
     'Draþ',
     'Quaden',
     'Ridïmel',
     'Rodom'
 );
+
+var entities = {
+    "Hëður": {
+        "entity": "Garquon",
+        "element": "Meren"
+    },
+    "Mëbel": {
+        "entity": "Þoraðrin",
+        "element": "Aðun"
+    },
+    "Dirann": {
+        "entity": "Detërien",
+        "element": "Merðen"
+    },
+    "Ma’uþ": {
+        "entity": "Elin",
+        "element": "Fronn"
+    },
+    "Rideyy": {
+        "entity": "Hëriel",
+        "element": "Enðir"
+    },
+    "Gerub": {
+        "entity": "Iliþon",
+        "element": "Miþon"
+    },
+    "Þrei": {
+        "entity": "Amenar",
+        "element": undefined
+    },
+    "Dimoc": {
+        "entity": "Iminiru",
+        "element": "Sëdur"
+    },
+    "Morkh": {
+        "entity": "Luminar",
+        "element": "Holar"
+    },
+    "Xentor": {
+        "entity": "Motimor",
+        "element": "Rort"
+    },
+    "Mëðïr": {
+        "entity": "Mirian",
+        "element": "Ilšir"
+    },
+    "Draþ": {
+        "entity": "Heloor",
+        "element": undefined
+    },
+    "Khmerd": {
+        "entity": "Zuþeron",
+        "element": "Gord"
+    },
+    "Quaden": {
+        "entity": "Umonar",
+        "element": "Ulquon"
+    },
+    "Ridïmel": {
+        "entity": "Feiriamen",
+        "element": "Reina"
+    },
+    "Rodom": {
+        "entity": "Nozoru",
+        "element": "Zima"
+    },
+    "Chamog": {
+        "entity": "Ketirai",
+        "element": "Loar"
+    }
+};
 
 var newMoonBaseDate = new Date(2005, 4, 8, 3, 48);
 
@@ -264,6 +335,21 @@ function genMonthTable(div) {
                 .append(
                     $('<td colspan="6">')
                         .html(month_name)));
+
+    ruler = entities[month_name].entity;
+    element = entities[month_name].element;
+
+    if (element != undefined) {
+        ruler += ', ' + element;
+    }
+
+    month_header
+        .append(
+            $('<tr>')
+                .addClass('monthrulers')
+                .append(
+                    $('<td colspan="6">')
+                        .html(ruler)));
 
     daylist = $('<tr>')
         .addClass('daynames');
