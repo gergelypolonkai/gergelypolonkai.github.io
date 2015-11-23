@@ -542,3 +542,19 @@ function getMoonPhase(date) {
 
     return phase;
 }
+
+function updateHoliday(div) {
+    id = $(div).attr('id');
+    holiday_name = $(div).html();
+
+    ruler = entities[holiday_name].entity;
+    element = entities[holiday_name].element;
+
+    if (element != undefined) {
+        ruler += ', ' + element;
+    }
+
+    ruler = $('<p>').addClass('small').html(ruler);
+
+    $(div).append(ruler);
+}

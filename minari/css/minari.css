@@ -71,3 +71,8 @@ td {
 .date-popover {
     text-align: center;
 }
+
+.holiday .small {
+    font-size: 75%;
+    font-weight: normal;
+}
