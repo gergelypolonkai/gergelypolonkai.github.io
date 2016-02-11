@@ -12,5 +12,5 @@ author:
 
 I was a Vi/ViM user for years. For several reasons I had to change to Emacs
 now and then. And then, I found
-[this](http://nyan-mode.buildsomethingamazing.com). I surrender. Emacs is
+[this](https://www.emacswiki.org/emacs/NyanMode). I surrender. Emacs is
 just better. (And it’s working even in plain text mode without graphics)
