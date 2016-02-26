@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Vala interface madness"
-date:      2016-02-26 13:07:62
+date:      2016-02-26 13:07:52
 tags:      [vala, development]
 published: true
 author:
