@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Do-Not-Track in IE10 vs. Apache"
-date:      2012-09-10 20:22:32+00:00
+date:      2012-09-10T20:22:32Z
 tags:      [apache, technology]
 permalink: /blog/2012/9/10/do-not-track-in-ie10-vs-apache
 published: true

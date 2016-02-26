@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "List Git branches and their remote tracking branches side by side"
-date:      2014-07-18 21:46:45+00:00
+date:      2014-07-18T21:46:45Z
 tags:      [git]
 permalink: /blog/2014/7/18/list-git-branches-and-their-remote-tracking-branches-side-by-side
 published: true

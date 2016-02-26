@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Why I stopped using annotation based routing in Symfony today"
-date:      2013-02-27 23:10:24+00:00
+date:      2013-02-27T23:10:24Z
 tags:      [development, symfony]
 permalink: /blog/2013/2/27/why-i-stopped-using-annotation-based-routing-in-symfony-today
 published: true

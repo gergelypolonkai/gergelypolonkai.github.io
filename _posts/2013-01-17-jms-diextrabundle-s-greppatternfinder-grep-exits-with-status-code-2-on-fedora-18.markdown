@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "JMS\\DiExtraBundle’s GrepPatternFinder – grep exits with status code 2 on Fedora 18"
-date:      2013-01-17 00:32:12+00:00
+date:      2013-01-17T00:32:12Z
 tags:      [fedora, selinux, symfony]
 permalink: /blog/2013/1/17/jms-diextrabundle-s-greppatternfinder-grep-exits-with-status-code-2-on-fedora-18
 published: true

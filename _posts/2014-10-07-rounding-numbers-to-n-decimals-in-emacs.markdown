@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Rounding numbers to N decimals in Emacs"
-date:      2014-10-07 10:28:50+00:00
+date:      2014-10-07T10:28:50Z
 tags:      [emacs, development]
 permalink: /blog/2014/10/7/rounding-numbers-to-n-decimals-in-emacs
 published: true

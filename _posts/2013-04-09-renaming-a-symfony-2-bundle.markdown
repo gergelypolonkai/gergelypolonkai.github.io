@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Renaming a Symfony 2 bundle"
-date:      2013-04-09 22:29:48+00:00
+date:      2013-04-09T22:29:48Z
 tags:      [development, symfony]
 permalink: /blog/2013/4/9/renaming-a-symfony-2-bundle
 published: true

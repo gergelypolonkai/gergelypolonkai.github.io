@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "First impressions of Windows 8"
-date:      2013-11-05 08:14:50+00:00
+date:      2013-11-05T08:14:50Z
 tags:      [windows]
 permalink: /blog/2013/11/5/first-impressions-of-windows-8
 published: true

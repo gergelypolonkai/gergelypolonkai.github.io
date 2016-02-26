@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Emacs: Implement a GObject’s virtual function"
-date:      2016-01-13 15:31:12+02:00
+date:      2016-01-13T13:31:12Z
 tags:      [c, development, emacs]
 published: true
 author:

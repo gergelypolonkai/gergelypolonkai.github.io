@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "PHP 5.4 released"
-date:      2012-03-20 13:31:12+00:00
+date:      2012-03-20T13:31:12Z
 tags:      [php]
 permalink: /blog/2012/3/20/php-5-4-released
 published: true

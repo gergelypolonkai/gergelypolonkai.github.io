@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Wordpress madness"
-date:      2012-06-14 06:40:12+00:00
+date:      2012-06-14T06:40:12Z
 tags:      [wordpress, ranting]
 permalink: /blog/2012/6/14/wordpress-madness
 published: true

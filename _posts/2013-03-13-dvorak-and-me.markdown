@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Dvorak and me"
-date:      2013-03-13 21:20:13+00:00
+date:      2013-03-13T21:20:13Z
 tags:      [linux]
 permalink: /blog/2013/3/13/dvorak-and-me
 published: true

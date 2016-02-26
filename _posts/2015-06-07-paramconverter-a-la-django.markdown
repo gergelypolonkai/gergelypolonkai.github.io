@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "@ParamConverter à la Django"
-date:      2015-06-07 20:14:32+02:00
+date:      2015-06-07T18:14:32Z
 tags:      [python, django]
 published: true
 author:

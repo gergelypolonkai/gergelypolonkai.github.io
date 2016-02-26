@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Proxy only non-existing files with mod_proxy and mod_rewrite"
-date:      2011-06-10 14:20:43+00:00
+date:      2011-06-10T14:20:43Z
 tags:      [apache]
 permalink: /blog/2011/6/10/proxy-only-non-existing-files-with-mod-proxy-and-mod-rewrite
 published: true

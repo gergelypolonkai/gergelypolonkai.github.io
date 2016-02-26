@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Programming, as I see it"
-date:      2013-03-01 23:32:35+00:00
+date:      2013-03-01T23:32:35Z
 permalink: /blog/2013/3/1/programming-as-i-see-it
 published: false
 author:

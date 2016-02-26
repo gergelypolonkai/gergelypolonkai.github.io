@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Zabbix performance tip"
-date:      2011-05-13 19:03:31+00:00
+date:      2011-05-13T19:03:31Z
 tags:      [zabbix, monitoring]
 permalink: /blog/2011/5/13/zabbix-performance-tip
 published: true

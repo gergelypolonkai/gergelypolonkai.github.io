@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Registering an enum type in GLib, glib-mkenums magic"
-date:      2014-08-16 15:10:54+00:00
+date:      2014-08-16T15:10:54Z
 tags:      [development, c, glib]
 permalink: /blog/2014/8/16/registering-an-enum-type-in-glib-glib-mkenums-magic
 published: true
