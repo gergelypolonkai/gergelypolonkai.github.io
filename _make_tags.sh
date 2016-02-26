@@ -36,7 +36,7 @@ EOF
             updated=1
         fi
 
-        if [ $updated == 0 ]; then
+        if [ $updated = 0 ]; then
             echo ""
         fi
     fi
