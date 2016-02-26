@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Using Git bisect to find the first good commit"
-date:      2015-02-26T10:42:56Z
+date:      2015-02-26 10:42:56
 tags:      [git]
 permalink: /blog/2015/2/26/using-git-bisect-to-find-the-first-good-commit
 published: true

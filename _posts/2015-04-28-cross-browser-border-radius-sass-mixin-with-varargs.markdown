@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Cross browser border-radius SASS mixin with varargs"
-date:      2015-04-27T22:59:56Z
+date:      2015-04-27 22:59:56
 tags:      [css, sass]
 permalink: /blog/2015/4/28/cross-browser-border-radius-sass-mixin-with-varargs
 published: true

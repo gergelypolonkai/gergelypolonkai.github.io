@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "NyanMacs"
-date:      2014-09-17T12:45:42Z
+date:      2014-09-17 12:45:42
 tags:      [emacs]
 permalink: /blog/2014/9/17/nyanmacs
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "mount: device or resource busy after enabling multipath"
-date:      2013-02-19T23:09:05Z
+date:      2013-02-19 23:09:05
 tags:      [linux, heartbeat-cluster]
 permalink: /blog/2013/2/19/mount-device-or-resource-busy-after-enabling-multipath
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Development man pages on Fedora"
-date:      2013-01-05T18:20:41Z
+date:      2013-01-05 18:20:41
 tags:      [development, fedora]
 permalink: /blog/2013/1/5/development-man-pages-on-fedora
 published: true

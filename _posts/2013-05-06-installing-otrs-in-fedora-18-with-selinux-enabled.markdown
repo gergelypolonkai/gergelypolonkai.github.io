@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Installing OTRS in Fedora 18 with SELinux enabled"
-date:      2013-05-06T06:01:52Z
+date:      2013-05-06 06:01:52
 tags:      [fedora, selinux, otrs]
 permalink: /blog/2013/5/6/installing-otrs-in-fedora-18-with-selinux-enabled
 published: true

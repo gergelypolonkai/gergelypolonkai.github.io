@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Why you should always test your software with production data"
-date:      2011-12-11T12:14:51Z
+date:      2011-12-11 12:14:51
 tags:      [development, testing, ranting]
 permalink: /blog/2011/12/11/why-you-should-always-test-your-software-with-production-data
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "git rm --cached madness"
-date:      2013-01-14T21:38:00Z
+date:      2013-01-14 21:38:00
 tags:      [development, git]
 permalink: /blog/2013/1/14/git-rm-cached-madness
 published: true

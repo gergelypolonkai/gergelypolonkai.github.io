@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Symfony 2 Configuration – Array of associative arrays"
-date:      2012-12-20T12:03:23Z
+date:      2012-12-20 12:03:23
 tags:      [php, symfony]
 permalink: /blog/2012/12/20/symfony-2-configuration-array-of-associative-arrays
 published: true

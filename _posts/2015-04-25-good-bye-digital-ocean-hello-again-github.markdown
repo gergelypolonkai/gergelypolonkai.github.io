@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Good bye, Digital Ocean! Hello again, GitHub!"
-date:      2015-04-25T21:18:56Z
+date:      2015-04-25 21:18:56
 permalink: /blog/2015/4/25/good-bye-digital-ocean-hello-again-github
 published: true
 author:

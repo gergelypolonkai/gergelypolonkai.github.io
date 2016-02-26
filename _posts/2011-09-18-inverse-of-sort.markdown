@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Inverse of `sort`"
-date:      2011-09-18T14:57:31Z
+date:      2011-09-18 14:57:31
 tags:      [linux, command-line]
 permalink: /blog/2011/9/18/inverse-of-sort
 published: true

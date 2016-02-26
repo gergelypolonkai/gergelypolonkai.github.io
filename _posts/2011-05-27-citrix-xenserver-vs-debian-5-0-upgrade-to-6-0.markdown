@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Citrix XenServer 5.5 vs. Debian 5.0 upgrade to 6.0"
-date:      2011-05-27T17:33:41Z
+date:      2011-05-27 17:33:41
 tags:      [citrix-xenserver, debian]
 permalink: /blog/2011/5/27/citrix-xenserver-vs-debian-5-0-upgrade-to-6-0
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "From Symfony to Django in two days"
-date:      2013-09-24T14:05:22Z
+date:      2013-09-24 14:05:22
 tags:      [development, symfony, django]
 permalink: /blog/2013/9/24/from-symfony-to-django-in-two-days
 published: true

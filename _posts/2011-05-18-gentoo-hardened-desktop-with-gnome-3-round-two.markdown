@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Gentoo hardened desktop with GNOME 3 – Round two"
-date:      2011-05-18T10:28:14Z
+date:      2011-05-18 10:28:14
 tags:      [gentoo, gnome3, selinux]
 permalink: /blog/2011/5/18/gentoo-hardened-desktop-with-gnome-3-round-two
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Some thoughts about that dead Linux Desktop"
-date:      2012-09-05T09:01:31Z
+date:      2012-09-05 09:01:31
 tags:      [linux]
 permalink: /blog/2012/9/5/some-thoughts-about-that-dead-linux-desktop
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "F/OSS Fail meter"
-date:      2015-08-19T10:12:19Z
+date:      2015-08-19 10:12:19
 tags:      [development]
 published: true
 author:

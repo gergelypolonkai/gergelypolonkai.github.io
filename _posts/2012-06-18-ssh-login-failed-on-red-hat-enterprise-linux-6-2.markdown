@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "SSH login FAILed on Red Had Enterprise Linux 6.2"
-date:      2012-06-18T18:28:45Z
+date:      2012-06-18 18:28:45
 tags:      [linux, selinux, ssh, red-hat]
 permalink: /blog/2012/6/18/ssh-login-failed-on-red-hat-enterprise-linux-6-2
 published: true

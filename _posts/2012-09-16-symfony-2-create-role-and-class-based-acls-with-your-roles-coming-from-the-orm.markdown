@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Symfony 2 – Create role- and class-based ACLs with your roles coming from the ORM"
-date:      2012-09-16T18:39:25Z
+date:      2012-09-16 18:39:25
 tags:      [php, symfony]
 permalink: /blog/2012/9/16/symfony-2-create-role-and-class-based-acls-with-your-roles-coming-from-the-orm
 published: true

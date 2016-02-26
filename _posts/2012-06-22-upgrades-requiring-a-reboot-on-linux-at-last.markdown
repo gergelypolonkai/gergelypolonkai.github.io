@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Upgrades requiring a reboot on Linux? At last!"
-date:      2012-06-22T20:04:51Z
+date:      2012-06-22 20:04:51
 tags:      [linux]
 permalink: /blog/2012/6/22/upgrades-requiring-a-reboot-on-linux-at-last
 published: true

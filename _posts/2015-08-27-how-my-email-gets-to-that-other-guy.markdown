@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:    "How my e-mail gets to that other guy?"
-date:      2015-08-27T21:47:19Z
+date:      2015-08-27 21:47:19
 tags:      [technology]
 published: true
 author:

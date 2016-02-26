@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Registering an enum type in GLib’s type system"
-date:      2013-01-06T02:34:03Z
+date:      2013-01-06 02:34:03
 tags:      [c, development, glib]
 permalink: /blog/2013/1/6/registering-an-enum-type-in-glib-s-type-system
 published: true

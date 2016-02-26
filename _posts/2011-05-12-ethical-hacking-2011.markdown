@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Ethical Hacking 2012"
-date:      2011-05-12T20:54:42Z
+date:      2011-05-12 20:54:42
 tags:      [conference]
 permalink: /blog/2011/5/12/ethical-hacking-2011
 published: true

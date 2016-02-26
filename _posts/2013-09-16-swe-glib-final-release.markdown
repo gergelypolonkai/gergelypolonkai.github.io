@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "SWE-GLib final release"
-date:      2013-09-16T21:37:17Z
+date:      2013-09-16 21:37:17
 tags:      [development, astrology]
 permalink: /blog/2013/9/16/swe-glib-final-release
 published: true

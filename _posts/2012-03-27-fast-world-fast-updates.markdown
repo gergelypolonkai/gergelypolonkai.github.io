@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Fast world, fast updates"
-date:      2012-03-27T06:18:43Z
+date:      2012-03-27 06:18:43
 tags:      [linux]
 permalink: /blog/2012/3/27/fast-world-fast-updates
 published: true

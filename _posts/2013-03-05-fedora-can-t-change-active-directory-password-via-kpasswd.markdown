@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Fedora can’t change Active Directory password via kpasswd"
-date:      2013-03-05T08:55:04Z
+date:      2013-03-05 08:55:04
 tags:      [fedora, kerberos, active-directory]
 permalink: /blog/2013/3/5/fedora-can-t-change-active-directory-password-via-kpasswd
 published: true

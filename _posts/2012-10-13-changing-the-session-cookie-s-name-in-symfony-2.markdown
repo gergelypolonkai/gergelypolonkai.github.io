@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Changing the session cookie’s name in Symfony 2"
-date:      2012-10-13T12:49:28Z
+date:      2012-10-13 12:49:28
 tags:      [symfony, development]
 permalink: /blog/2012/10/13/changing-the-session-cookie-s-name-in-symfony-2
 published: true

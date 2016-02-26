@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "How to start becoming a web developer"
-date:      2012-09-07T18:12:12Z
+date:      2012-09-07 18:12:12
 tags:      [development, technology]
 permalink: /blog/2012/9/7/how-to-start-becoming-a-web-developer
 published: true

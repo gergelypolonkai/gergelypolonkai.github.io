@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "SmsGateway and SmsSender"
-date:      2012-10-07T00:10:26Z
+date:      2012-10-07 00:10:26
 tags:      [development, php, symfony]
 permalink: /blog/2012/10/7/smsgateway-and-smssender
 published: true

@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Haversine in MySQL"
-date:      2013-03-05T12:49:28Z
+date:      2013-03-05 12:49:28
 permalink: /blog/2013/3/5/haversine-in-mysql
 tags:      [mysql, development]
 published: true

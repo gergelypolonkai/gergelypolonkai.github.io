@@ -1,7 +1,7 @@
 ---
 layout:    post
 title:     "Oracle Database “incompatible” with Oracle Linux?"
-date:      2011-05-27T17:53:31Z
+date:      2011-05-27 17:53:31
 tags:      [linux, oracle]
 permalink: /blog/2011/5/27/oracle-database-incompatible-with-oracle-linux
 published: true
