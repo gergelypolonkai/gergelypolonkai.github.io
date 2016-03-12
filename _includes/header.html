@@ -22,14 +22,9 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-pencil"></span> Contact me <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="mailto:gergely@polonkai.eu" target="_blank"><img src="{{'/images/contact/email.png' | prepend: site.baseurl}}" alt="" /> E-mail</a></li>
-                                    <li><a href="http://www.linkedin.com/in/gergelypolonkai" target="_blank"><img src="{{'/images/contact/linkedin.png' | prepend: site.baseurl}}" alt="" /> LinkedIn</a></li>
-                                    <li><a href="skype:gergely.polonkai" target="_blank"><img src="{{'/images/contact/skype.png' | prepend: site.baseurl}}" alt="" /> Skype</a></li>
-                                    <li><a href="http://facebook.com/Polesz" target="_blank"><img src="{{'/images/contact/facebook.png' | prepend: site.baseurl}}" alt="" /> Facebook</a></li>
-                                    <li><a href="https://plus.google.com/+GergelyPolonkai/about" target="_blank"><img src="{{'/images/contact/google_plus.png' | prepend: site.baseurl}}" alt="" /> Google+</a></li>
-                                    <li><a href="http://twitter.com/GergelyPolonkai" target="_blank"><img src="{{'/images/contact/twitter.png' | prepend: site.baseurl}}" alt="" /> Twitter</a></li>
-                                    <li><a href="http://gergelypolonkai.tumblr.com" target="_blank"><img src="{{'/images/contact/tumblr.png' | prepend: site.baseurl}}" alt="" /> Tumblr</a></li>
-                                    <li><a href="http://gergelypolonkai.deviantart.com" target="_blank"><img src="{{'/images/contact/deviantart.png' | prepend: site.baseurl}}" alt="" /> deviantArt</a></li>
+{% for contact in site.data.contacts %}
+                                    <li><a href="{{contact.link}}" target="_blank"><img src="{{'/images/contact/' | prepend: site.baseurl | append: contact.image}}" alt="" /> {{contact.text}}</a></li>
+{% endfor %}
                                     <li><a href="{{'/blog/atom.xml' | prepend: site.baseurl}}"><img src="{{'/images/contact/feed.png' | prepend: site.baseurl}}" alt="" /> RSS Feed</a></li>
                                 </ul>
                             </li>

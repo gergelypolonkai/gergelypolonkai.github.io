@@ -1,0 +1,27 @@
+- text: E-mail
+  link: mailto:gergely@polonkai.eu
+  image: email.png
+- text: Stack Exchange
+  link: http://stackexchange.com/users/1369500/gergelypolonkai
+  image: stackexchange.png
+- text: LinkedIn
+  link: http://www.linkedin.com/in/gergelypolonkai
+  image: linkedin.png
+- text: Skype
+  link: skype:gergely.polonkai
+  image: skype.png
+- text: Facebook
+  link: http://facebook.com/Polesz
+  image: facebook.png
+- text: Google+
+  link: https://plus.google.com/+GergelyPolonkai/about
+  image: google_plus.png
+- text: Twitter
+  link: http://twitter.com/GergelyPolonkai
+  image: twitter.png
+- text: Tumblr
+  link: http://gergelypolonkai.tumblr.com
+  image: tumblr.png
+- text: deviantArt
+  link: http://gergelypolonkai.deviantart.com
+  image: deviantart.png
