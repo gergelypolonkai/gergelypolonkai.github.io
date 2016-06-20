@@ -11,6 +11,7 @@ paginate_path: "/blog/page/:num"
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'CNAME']
 gems:
   - jekyll-gist
+  - jekyll-paginate
 
 # Build settings
 markdown: kramdown
