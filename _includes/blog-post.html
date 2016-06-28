@@ -1,18 +1,18 @@
-<article class="{% if page.post_listing %}col-sm-5 col-md-6 {% endif%}post">
-{% if page.post_listing %}
+<article class="{% if layout.post_listing %}col-sm-5 col-md-6 {% endif%}post">
+{% if layout.post_listing %}
     <ul class="list-inline">
         <li class="col-md-8">
 {% endif %}
             <header class="post-header">
                 <h3>
-{% if page.post_listing %}
+{% if layout.post_listing %}
 <a href="{{post.url | prepend: site.baseurl}}">
 {% endif %}
 {{post.title}}
-{% if page.post_listing %}
+{% if layout.post_listing %}
 </a>
 {% endif %}
-{% if page.render_post %}
+{% if layout.render_post %}
                     <div class="plusone-container"><div class="g-plusone" data-annotation="inline" data-size="small" data-width="300"></div></div>
 {% endif %}
                 </h3>
@@ -26,7 +26,7 @@
             </header>
 
             <main>
-{% if page.render_post %}
+{% if layout.render_post %}
                 {{content}}
 {% else %}
                 {{post.excerpt}}
@@ -34,7 +34,7 @@
             </main>
 
 {% include tag-link.html %}
-{% if page.post_listing %}
+{% if layout.post_listing %}
         </li>
     </ul>
 {% endif %}
