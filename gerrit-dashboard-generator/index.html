@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gerrit Dashboard URL generator</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container" id="main">
+            <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="helpModalLabel">Help</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p><a href="https://gerrit-review.googlesource.com/Documentation/user-dashboards.html">Gerrit dashboards</a> are a powerful way to filter changes in a project into multiple categories. For example, you can construct a dashboard to show the changes in one project grouped by state (drafts, opened, reviewed, abandoned, closed).</p>
+                            <p>One way to create dashboards is to modify the project configuration. Most developers don’t have the necessary rights for this. The other way is to construct a special dashboard link. Anyone with access to the Gerrit instance can do that, but doing so is really painful. The goal of this tool is to lend a helping hand in that.</p>
+                            <p>The <strong>Gerrit base URL</strong> is the base URL of your Gerrit instance.</p>
+                            <p><strong>Dashboard title</strong> will be the title of your dashboard, and will be displayed on the top of the page.</p>
+                            <p>To create a new section, just press the <strong>+ Add secion</strong> button. You can name all the sections by filling the <strong>Section title</strong> field. If you omit that, it will be called <em>Section &lt;n&gt;</em>, where &lt;n&gt; is the index of the section (numbered from 1; sorry about that.)</p>
+                            <p>If you decide a section is not needed, press the big red <strong>- Remove</strong> button next to the section title.</p>
+                            <p>To add a new filter to a section, press the <strong>+ Add filter</strong> button. You can choose the filter type (e.g. you can filter on branch name, state, project, and many other fields. There is a list at the bottom of this panel.) When you find the correct filtering field, just enter a filter value in the input box. If you actually want to <strong>exclude</strong> changes matching that filter, tick the checkbox on the right of the input box.</p>
+                            <p>Gerrit filters are concatenated together by <strong>AND</strong> operators. If you want to match on, for example, multiple branches, don’t create multiple <em>Branch</em> filters, but separate the branch names with colons (:), like <code>master:develop</code>.</p>
+                            <p>If you decide a filter is not needed, select the <strong>Delete this filter</strong> from the filter type dropdown.</p>
+                            <p>The dashboard URL on the bottom of the page will update with every change you make, just like the <strong>Try it!</strong> button’s target URL.</p>
+                            <p>You can add dashboards to the <strong>My</strong> tab of the Gerrit page. Navigate to <strong>Settings &gt; Preferences</strong> and Enter a name in the input field under <strong>My Menu</strong>, and enter the generated <strong>Dashboard URL</strong> in the URL field, then press the <strong>+</strong> button on the left. Using the arrows on the rigt of the table you can reorganize the different dashboards you add here; the first link will be opened when you login to Gerrit. (<em>Hint</em>: You can add pretty much anything as the URL of a page, like basic queries or your settings page.)</p>
+                            <p>Finally, the list of filters currently supported by this tool:</p>
+
+                            <dl>
+                                <dt>Project</dt>
+                                <dd>The project where you want the changes from. If you don’t specify this, changes from <em>all</em> projects will be shown!</dd>
+
+                                <dt>Branch</dt>
+                                <dd>The branch for which the change was submitted.</dd>
+
+                                <dt>State</dt>
+                                <dd>The change state. Some possible values are <em>starred</em> (will match on changes starred by the current user), <em>reviewed</em> (will match on changes with at least one non-zero vote in any category), <em>owner</em> (will match on changes owned by the current user), <em>reviewer</em> (will match on changes where the current user is added as a reviewer), <em>open</em> (will match on any open changes, ie. that is not merged nor abandoned yet), <em>draft</em> (will match on draft changes), <em>closed</em> (will match on closed changes, ie. merged or abandoned), <em>merged</em> (will match on changes that have been merged to the target branch), <em>mergeable</em> (will match on changes that have no merge conflicts).</dd>
+                            </dl>
+
+                            <p>If you want me to add new filter fields, have a problem to report, or you have a feature in your mind I could add, contact me!</p>
+
+                            <h4>Known limitations</h4>
+
+                            <ul>
+                                <li>It is impossible to create complex queries with this tool (like closed changes on branch a <strong>OR</strong> drafts on branch b). Even though the example I provided is a bit silly, there are use cases where you want to do such complex queries, but if you need that, you are on your own. Sorry.</li>
+                                <li>This page is not protected from XSS, CSRF, You-Name-It-Vulnerability, so use it with care. Gerrit, on the other hand, provides such protections, so your forgery will be prevented anyway.</li>
+                                <li>This page is tested only in Google Chrome. If you bump into problems in other browsers, contact me!</li>
+                            </ul>
+
+                            <h4>Contact</h4>
+
+                            <p>…in order of preference</p>
+
+                            <ul>
+                                <li>You have a problem with the tool? Or maybe a feature idea? <a href="https://github.com/gergelypolonkai/gerrit-dashboard-generator/issues">Open an issue on GitHub</a>!</li>
+                                <li>Matrix (<a href="https://vector.im/beta/#/user/@gergely:polonkai.eu">@gergely:polonkai.eu</a></li>
+                                <li><a href="mailto:gergely@polonkai.eu">e-mail</a></li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron">
+                <h1>Gerrit Dashboard URL generator</h1>
+                <p>You can use this site to generate a dashboard URL for your Gerrit instance.</p>
+                <p><a class="btn btn-primary btn-lg" id="help-button" data-toggle="modal" data-target="#helpModal">Tell me the rules</a></p>
+            </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="gerrit-base" class="col-sm-2 control-label">Gerrit base URL</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="gerrit-base" placeholder="URL">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dashboard-title" class="col-sm-2 control-label">Dashboard title</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dashboard-title" placeholder="Title">
+                    </div>
+                </div>
+            </form>
+            <h2 id="dashboard-title-header">Dashboard title goes here</h2>
+            <hr id="last-hr">
+            <button id="new-section">+ Add section</button>
+            <hr>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="dashboard-title" class="col-sm-2 control-label">Dashboard URL</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dashboard-url" readonly="true">
+                    </div>
+                </div>
+            </form>
+            <a id="test-link" href="#" target="_blank" class="hidden">Try it!</a>
+        </div>
+
+        <script type="text/javascript">
+            String.prototype.replaceAll = function(find, replacement) {
+                var str = this;
+
+                return str.replace(new RegExp(find, 'g'), replacement);
+            };
+
+            var filterList = {
+                "project": "Project",
+                "branch": "Branch",
+                "is": "State"
+            }
+
+            function filter_div(title) {
+                filter_list = $('<ul></ul>')
+                    .addClass('dropdown-menu');
+
+                for (var key in filterList) {
+                    filter_list.append($('<li></li>')
+                        .append($('<a></a>')
+                            .attr('href', '#')
+                            .attr('data-field', key)
+                            .addClass('filter-chooser')
+                            .append(filterList[key])));
+                }
+
+                filter_list.append($('<li></li>')
+                    .attr('role', 'separator')
+                    .addClass('divider'));
+
+                filter_list.append($('<li></li>')
+                    .append($('<a></a>')
+                        .attr('href', '#')
+                        .addClass('filter-delete')
+                        .append('Delete this filter')));
+
+                return $('<div></div>')
+                    .addClass('input-group')
+                    .append($('<div></div>')
+                        .addClass('input-group-btn')
+                        .append($('<button></button>')
+                            .addClass('btn')
+                            .addClass('btn-default')
+                            .addClass('dropdown-toggle')
+                            .attr('data-toggle', 'dropdown')
+                            .attr('aria-haspopup', 'true')
+                            .attr('aria-expanded', 'false')
+                            .append('<span>Field</span> ')
+                            .append($('<span></span>')
+                                .addClass('caret')))
+                        .append(filter_list))
+                    .append($('<input>')
+                        .addClass('form-control')
+                        .addClass('filter-value'))
+                    .append($('<span></span>')
+                        .addClass('input-group-addon')
+                        .append($('<input type="checkbox">')
+                            .addClass('negate')));
+            }
+
+            $(document).ready(function () {
+                $('test-link').hide();
+
+                $('#new-section').click(function() {
+                    section_div = $('<div></div>')
+                        .addClass('dashboard-section')
+                        .append($('<h3>Title of the section </h3>')
+                            .append($('<a></a>')
+                                .addClass('btn')
+                                .addClass('btn-danger')
+                                .addClass('section-delete')
+                                .append('- Remove section')));
+
+                    filter_add_button = $('<button></button>')
+                        .addClass('new-filter')
+                        .append('+ Add filter');
+
+                    title_group = $('<div></div>')
+                        .addClass('form-group')
+                        .append($('<label></label>')
+                            .addClass('col-sm-2')
+                            .addClass('control-label')
+                            .append('Section title'))
+                        .append($('<div></div>')
+                            .addClass('col-sm-10')
+                            .append($('<input type="text">')
+                                .addClass('form-control')
+                                .addClass('section-title')));
+
+                    section_div.append(title_group);
+                    section_div.append(filter_add_button);
+
+                    section_div.insertBefore($('#last-hr'));
+
+                    $(document).trigger('dashboard:changed');
+                });
+            });
+
+            $('#main').on('keyup', '.section-title', function() {
+                title = $(this).val();
+
+                if (title == '') {
+                    title = 'Title of the section';
+                }
+
+                $(this).parent().parent().prev()[0].innerHTML = title;
+
+                $(document).trigger('dashboard:changed');
+            });
+
+            $('#main').on('click', '.section-delete', function() {
+                if (window.confirm("Are you sure you want to remove this whole section?")) {
+                    $(this).parent().parent().remove();
+
+                    $(document).trigger('dashboard:changed');
+                }
+            });
+
+            $('#main').on('click', '.new-filter', function() {
+                filter_row = filter_div();
+                filter_row.insertBefore($(this));
+
+                $(document).trigger('dashboard:changed');
+            });
+
+            $('#main').on('click', '.filter-chooser', function() {
+                input = $(this).parent().parent().parent().next();
+                button_text = $(this).parent().parent().prev().children().first()[0];
+                field = $(this).data().field;
+                input.data('field', field);
+                button_text.innerHTML = filterList[field];
+
+                $(document).trigger('dashboard:changed');
+            });
+
+            $('#main').on('click', '.filter-delete', function() {
+                if (window.confirm("Are you sure you want to remove this filter?")) {
+                    $(this).parent().parent().parent().parent().remove();
+
+                    $(document).trigger('dashboard:changed');
+                }
+            });
+
+            $('#main').on('keyup', '.filter-value, #gerrit-base, #dashboard-title', function() {
+                if ($(this).attr('id') == 'dashboard-title') {
+                    title = $(this).val();
+
+                    if (title == '') {
+                        title = 'Title of the Dashboard';
+                    }
+
+                    $('#dashboard-title-header')[0].innerHTML = title;
+                }
+
+                $(document).trigger('dashboard:changed');
+            });
+
+            $('#main').on('change', '.negate', function() {
+                $(document).trigger('dashboard:changed');
+            });
+
+            $('#dashboard-url').on('click', function() {
+                $(this).select();
+            });
+
+            $(document).on('dashboard:changed', function() {
+                var params = {
+                    title: $('#dashboard-title').val()
+                }
+
+                var i = 0;
+
+                $('.dashboard-section').each(function() {
+                    i++;
+                    section_title = $(this).find('.section-title').val();
+
+                    if (section_title == '') {
+                        section_title = 'Section ' + i;
+                    }
+
+                    var filters = new Array();
+
+                    $(this).find('.filter-value').each(function() {
+                        field = $(this).data().field;
+                        value = $(this).val();
+                        if ($(this).parent().find('.negate')[0].checked) {
+                            field = '-' + field;
+                        }
+
+                        if (value.indexOf(' ') > -1) {
+                            value = '"' + value + '"';
+                        }
+
+                        if ((field === undefined) || (value == '')) {
+                            $(this).parent().addClass('has-error');
+                        } else {
+                            $(this).parent().removeClass('has-error');
+
+                            if (value.indexOf(':') > -1) {
+                                filters.push('(' + value.split(':').map(function(v) {return field + ':' + v}).join(' OR ') + ')');
+                            } else {
+                                filters.push(field + ':' + value);
+                            }
+                        }
+                    });
+
+                    params[section_title] = filters.join(" ");
+                });
+
+                sections = $.param(params)
+                    .replaceAll('%20', '+')
+                    .replaceAll('%3A', ':')
+                    .replaceAll('%2F', '/');
+
+                url = '#/dashboard/?' + sections;
+
+                $('#dashboard-url').val(url);
+
+                url = $('#gerrit-base').val() + url;
+
+                $('#test-link')
+                    .attr('href', url)
+                    .removeClass('hidden');
+            });
+        </script>
+    </body>
+</html>
