@@ -18,3 +18,13 @@ post_listing: true
 {% assign posts = site.posts %}
 {% assign post_limit = 6 %}
 {% include post-list.html %}
+
+<nav>
+    <ul class="pager">
+        <li class="next">
+            <a href="{{ site_url }}/blog/">
+                Take me to all the blog posts! <span aria-hidden="true">&rarr;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
