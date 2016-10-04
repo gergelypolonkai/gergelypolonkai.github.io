@@ -11,7 +11,11 @@
 
 {% if page.name != 'about.html' %}
             <div class="well well-sm small">
-                <div class="pull-left" id="about-well-image"><img src="{{'/images/profile.svg' | prepend: site.baseurl}}" alt=""></div>
+                <div class="pull-left" id="about-well-image">
+                    <a href="{{ site_url }}/about/">
+                        <img src="{{'/images/profile.svg' | prepend: site.baseurl}}" alt="">
+                    </a>
+                </div>
 {%     include about.html %}
                 <div class="clearfix"></div>
             </div>
