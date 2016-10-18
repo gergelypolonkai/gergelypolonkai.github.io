@@ -8,7 +8,7 @@ timezone: Europe/Budapest
 name: Gergely Polonkai
 paginate: 10
 paginate_path: "/blog/page/:num"
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'CNAME']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'CNAME', ".hyde.el"]
 gems:
   - jekyll-gist
   - jekyll-paginate
