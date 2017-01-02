@@ -2,8 +2,10 @@
 layout: default
 post_listing: true
 ---
+<h3 class="tag">{{ page.tag }}</h3>
 {{content}}
-<h3>Articles under this tag</h3>
+
+<h4>Articles under this tag</h4>
 
 {% if site.tags[page.tag] %}
 {%     assign posts = site.tags[page.tag] %}

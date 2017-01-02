@@ -4,7 +4,11 @@
         <li class="col-md-8">
 {% endif %}
             <header class="post-header">
+{% if page.tag %}
+                <h5>
+{% else %}
                 <h3>
+{% endif %}
 {% if page.post_listing %}
 <a href="{{post.url | prepend: site.baseurl}}">
 {% endif %}
@@ -15,7 +19,11 @@
 {% if layout.render_post %}
                     <div class="plusone-container"><div class="g-plusone" data-annotation="inline" data-size="small" data-width="300"></div></div>
 {% endif %}
+{% if page.tag %}
+                </h5>
+{% else %}
                 </h3>
+{% endif %}
                 <div class="meta pull-left">
                     {{post.author.name}}
                 </div>
