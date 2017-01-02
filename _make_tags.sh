@@ -9,7 +9,7 @@ layout="posts-by-tag"
 
 for tag in `grep -h ^tags: _posts/* | sed -re 's/^tags: +\[//' -e 's/\]$//' -e 's/, /\n/g' | sort | uniq`
 do
-    tag_file="blog/tag/${tag}.html"
+    tag_file="blog/tag/${tag}.md"
     echo -n "[$tag] "
 
     if [ ! -f $tag_file ]
