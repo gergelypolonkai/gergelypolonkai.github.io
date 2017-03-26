@@ -40,14 +40,14 @@ Now if you add a new variable to the formatter like my new `%(category)s`,
 you get a nifty `KeyError` saying there is no `category` in the format
 expansion dictionary.  If you add `category='auth` to the
 `app.logger.info()` calls and its cousins, it’s fine, because these methods
-use the magic `\*\*kwarg` argument to swallow it. Everything goes well until
-control arrives to the `\_log()` method: it complains about that extra
+use the magic `**kwarg` argument to swallow it. Everything goes well until
+control arrives to the `_log()` method: it complains about that extra
 `category` keyword argument.  Taking a peek at Python’s internals, I found
-two things: `info()`, `error()`, and co. pass `\*args` and `\*\*kwargs` to
-`\_log()` unmodified, and the `\_log()` method doesn’t have `\*\*kwargs`
+two things: `info()`, `error()`, and co. pass `*args` and `**kwargs` to
+`_log()` unmodified, and the `_log()` method doesn’t have `**kwargs`
 present in its definition to swallow it.  A little doc reading later I found
 that if I want to pass extra arguments for such a formatter, I should do it
-via the `extra` keyword argument to `\_log()`.  A call like
+via the `extra` keyword argument to `_log()`.  A call like
 `app.logger.info('invalid password', extra={'category': 'auth'})` solved the
 problem.  Now *that* is tedious.
 
@@ -56,8 +56,8 @@ and `error()`, and handle `category` there.  But this resulted in lots of
 repeating code.  I changed the specification a bit, so my calls would look
 like `info('message', category='auth)` instead of the original plan of
 `info('auth', 'message')`: as the logging methods pass all keyword arguments
-to `\_log()`, I can handle it there.  So at the end, my new logger class
-only patches `\_log()`, by picking out `category` from the kwarg list, and
+to `_log()`, I can handle it there.  So at the end, my new logger class
+only patches `_log()`, by picking out `category` from the kwarg list, and
 inserting it to `extra` before calling `super`.
 
 As you can see, this is a bit ugly solution.  It requires me, the app
