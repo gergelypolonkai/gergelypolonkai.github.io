@@ -24,7 +24,7 @@ using a middleware, which may introduce performance issues
 sometimes<sup>[citation needed]</sup>. So I decided to go with decorators, and
 at the end, I came up with this:
 
-{% gist gergelypolonkai/498a32297f39b4960ad7 helper.py %}
+{% gist 498a32297f39b4960ad7 helper.py %}
 
 Now I can decorate my views, either class or function based, with
 `@convert_params(User, (Article, 'aid'), (Paragraph, None, 'pid'),

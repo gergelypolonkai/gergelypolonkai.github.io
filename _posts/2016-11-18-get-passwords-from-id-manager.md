@@ -21,7 +21,7 @@ retrieving them for your own eyes. But it cannot retrieve account data
 programatically. Taking a look into its source code, I came up with this
 solution:
 
-{% gist gergelypolonkai/8bad70502ac563864080f754fce726c3 idm.el %}
+{% gist 8bad70502ac563864080f754fce726c3 idm.el %}
 
 I currently need only the account ID (ie. the username) and the password,
 but it’s pretty easy to add a macro to get the `memo` or `update-time`

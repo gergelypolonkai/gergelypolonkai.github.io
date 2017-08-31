@@ -31,7 +31,7 @@ Since I use Emacs for pretty much everything coding-related (and many more,
 but that’s the topic of a different post), I wrote a small function to do it
 for me.
 
-{% gist gergelypolonkai/7b062a00d3b8a2555024521273cecfee python-docstring.el %}
+{% gist 7b062a00d3b8a2555024521273cecfee python-docstring.el %}
 
 There are still a lot of things to improve:
 

@@ -20,9 +20,9 @@ feature](https://developer.gnome.org/gobject/unstable/gtype-non-instantiable.htm
 obvious. Making the long story short, I have checked with the `GIO` sources for
 an example, and using that, I have created this small, working chunk:
 
-{% gist gergelypolonkai/47794b6fb94484f8160b client-state.h %}
+{% gist 47794b6fb94484f8160b client-state.h %}
 
-{% gist gergelypolonkai/47794b6fb94484f8160b client-state.c %}
+{% gist 47794b6fb94484f8160b client-state.c %}
 
 Still, it can be made more perfect by using the
 [glib-mkenums](http://developer.gnome.org/gobject/stable/glib-mkenums.html)

@@ -29,4 +29,4 @@ could not start specifically with the `top` side. I decided to go with
 the top right corner for the first parameter, while trying to keep a
 sane repeating pattern. Here is the result:
 
-{% gist gergelypolonkai/313b227434ecc5d85d7b border-radius.sass %}
+{% gist 313b227434ecc5d85d7b border-radius.sass %}

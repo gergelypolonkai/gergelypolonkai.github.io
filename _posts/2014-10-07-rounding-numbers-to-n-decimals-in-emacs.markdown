@@ -16,7 +16,7 @@ displayed in small size, so this amount of precision was irrelevant, and
 these numbers took almost half of my SVG images’ size. So I created an
 Elisp defun to round these numbers to 2 decimals:
 
-{% gist gergelypolonkai/9c721ceda6d3079b4f05 %}
+{% gist 9c721ceda6d3079b4f05 %}
 
 This finds the first digit of the number under point (the cursor), and
 reduces its digits to the given amount (or the number given with `C-u`). It

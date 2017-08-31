@@ -17,6 +17,6 @@ hosting the page yet. Until we get it in our hands, I did a trick.
 I enabled `mod_rewrite`, `mod_proxy` and `mod_proxy_http`, then added the following
 lines to my apache config:
 
-{% gist gergelypolonkai/47680bfa44eb29708f20 %}
+{% gist 47680bfa44eb29708f20 redirect-non-existing.conf %}
 
 I’m not totally sure it’s actually secure, but it works for now.

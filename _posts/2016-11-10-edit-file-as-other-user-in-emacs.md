@@ -16,7 +16,7 @@ Bozhidar Batsov on opening the current file as root. I barely use
 I almost never use root as the target user. So I decided to fix it for my
 needs.
 
-{% gist gergelypolonkai/192c83aa0556d5cdaf4018f57b75a84b %}
+{% gist 192c83aa0556d5cdaf4018f57b75a84b %}
 
 If the user is not specified, the default is still root. Also, if the
 current buffer is not visiting a file, I prompt for a filename. As I’m not

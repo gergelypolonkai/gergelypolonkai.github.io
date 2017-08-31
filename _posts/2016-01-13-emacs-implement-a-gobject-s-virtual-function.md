@@ -44,7 +44,7 @@ line and an actual function header for `i_foo_bar` with the same
 parameters. That’s a cumbersome job for more than 40 function
 headers. But emacs comes to the rescue!
 
-{% gist gergelypolonkai/bfd36be8b515edced3d2 implement-gobject-vfunc.el %}
+{% gist bfd36be8b515edced3d2 implement-gobject-vfunc.el %}
 
 Now all I have to do is to copy the whole vtable entry into
 `matrix_http_api_matrix_api_init()`, execute `M-x

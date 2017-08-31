@@ -38,7 +38,7 @@ will be invoked for every string it finds.
 
 Before getting into the details, let’s me present you the code I made:
 
-{% gist gergelypolonkai/1a16a47e5a1971ca33e58bdfd88c5059 string-checker.py %}
+{% gist 1a16a47e5a1971ca33e58bdfd88c5059 string-checker.py %}
 
 The class initialization does two things: creates an empty `in_call` list
 (this will hold our primitive backtrace), and saves the filename, if

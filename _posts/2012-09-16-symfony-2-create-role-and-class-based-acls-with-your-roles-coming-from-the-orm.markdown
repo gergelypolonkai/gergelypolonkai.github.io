@@ -24,7 +24,7 @@ own role hierarchy service that implements `RoleHierarchyInterface`.
 So far so good, first tests. It soon turned out that if `User::getRoles()`
 returns a `DoctrineCollection` as it does by default, then the standard
 
-{% gist gergelypolonkai/883ace4f35e440f6fe0f WhatEver.php %}
+{% gist 883ace4f35e440f6fe0f WhatEver.php %}
 
 doesn’t work. I know, it should not be hard coded, as my roles and permission
 tables are dynamic, I have just tested. So I fixed my `User` entity so
@@ -35,12 +35,12 @@ return the original collection, but I think it will never be used.
 After that, I had to implement some more features so I put this task away.
 Then, I tried to create my first ACL.
 
-{% gist gergelypolonkai/883ace4f35e440f6fe0f WhatEver2.php %}
+{% gist 883ace4f35e440f6fe0f WhatEver2.php %}
 
 I was about to check if the user who is logged in has an `OWNER` permission on
 the `User` class.
 
-{% gist gergelypolonkai/883ace4f35e440f6fe0f WhatEver3.php %}
+{% gist 883ace4f35e440f6fe0f WhatEver3.php %}
 
 The ACL was defined based on a role, so everyone who had the `ROLE_ADMIN` role
 should gain access to the user listing page. But they didn’t. It took several

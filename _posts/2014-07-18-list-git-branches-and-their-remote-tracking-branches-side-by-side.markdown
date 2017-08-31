@@ -20,7 +20,7 @@ does the work for me. Its only requirements are git (of course), and the
 `column` command, which is pretty obviously present on every POSIX
 compliant systems (even OSX).
 
-{% gist gergelypolonkai/8af6a3e86b57dd4c250e %}
+{% gist 8af6a3e86b57dd4c250e %}
 
 I just put it in my path, and `git branches-with-remotes` does the work!
 

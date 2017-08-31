@@ -14,4 +14,4 @@ Just insert it in your database, feed them two Google coordinates, and you get
 the distance in kilometres. If you happen to need it in miles, change the
 constant `12756.200` in the `RETURN` row to `7922.6` instead.
 
-{% gist gergelypolonkai/bdad1cf2d410853bef35 %}
+{% gist bdad1cf2d410853bef35 %}

@@ -17,4 +17,4 @@ the same name.
 
 To change this, you will have to modify the `config.yml` file like this:
 
-{% gist gergelypolonkai/c695670ecca2809f7c93 %}
+{% gist c695670ecca2809f7c93 %}
