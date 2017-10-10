@@ -7,6 +7,10 @@
         <link rel="icon" type="image/x-icon" href="{{'/favicon.ico' | prepend: site.baseurl}}">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
         <link rel="alternate" type="application/rss+xml" title="Gergely Polonkai's Blog - RSS Feed" href="{{site.url}}/blog/atom.xml">
+        {% if page.path == 'index.html' %}
+        <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud?source=profiles">
+        <link rel="openid2.local_id" href="http://www.google.com/profiles/105740970718293884702">
+        {% endif %}
 
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{'/css/style.css' | prepend: site.baseurl}}">
