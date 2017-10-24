@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/gergelypolonkai
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://gergely.polonkai.eu
+  * I am gergelypolonkai (https://keybase.io/gergelypolonkai) on keybase.
+  * I have a public key with fingerprint 13D6 0476 B35A FCA8 BC01  3A32 F42B BA58 B074 0C4C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101ceab57f101e57c410a43bdc8d929f98285ab06539bff10fda8b753edc5f6cc910a",
+      "fingerprint": "13d60476b35afca8bc013a32f42bba58b0740c4c",
+      "host": "keybase.io",
+      "key_id": "f42bba58b0740c4c",
+      "kid": "0101ceab57f101e57c410a43bdc8d929f98285ab06539bff10fda8b753edc5f6cc910a",
+      "uid": "71a6ab9599863d4b04753bed0d7f6b19",
+      "username": "gergelypolonkai"
+    },
+    "service": {
+      "hostname": "gergely.polonkai.eu",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1508840350,
+  "expire_in": 157680000,
+  "prev": "06e534e15c10f35e341bc63161d96265b3cb58da1a58d8f209fb56762dfa656b",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMNGAnicrZJ/UBRlHMYP5MdAQJFyxGSjLGPOyEW7t/vu3Z4iDSJDZCU1J2LYse/u
+u+fGcXve7SHHr7GRAEckT1AccWAKTUxzxGZgMAqvEEynyQmZwakJ0DEoCErB8EfR
+u0z+0Ux/tv+8++77eZ59vs+8fdFLdJFBs8kXtp5TozYFXQ0c9+ryZpa2lBFQEX2E
+pYwoRIsLcojIo9oKZZGwECRFUgLiITBJ+A0Bk8BQJM/QUBTMImfkJM5sNAMekiyg
+OShhSBJ5MzQBGokCkFhB4DBPGAhJdtqR2+WWnSq2pWiRJRkTC2nASwIWCCRF87RR
+YowQ8sAMSRNDCoyAhTsUj6bA4SDvQSmygr/hjW0x3n/w/3Nu76KdieJZHnKA48ws
+LTIQZwc0RCIpmiQWUpwGepDbyRchTONB7cjhcykOxVnIy0SFgcCHxbKAtH61gf4N
+pjwmU5AXO7nciqoIigMDO1TVZdH0qs+lCXYhaPvHygZlp4hLxYJi5PbIipOwUJgU
+VFnzpgBpNjMkDUgDgUpcshvZZI0AJtZM4kf7DSrWmmIRoBlEAQF3QANEMxQUWJpi
+KZFjjSyAtACBWeQpXLNolowkJ0HAmlijKPEsYCGhDbfTqRAWgGPydmzpke1OXvW6
+EVHxZSA/RBcUqQsLDdYumy4y4qnHV5AJe/LPZb36FXMnp3uuhcMzhSunLuS/Tea2
+d8uNykgGbO7blB6o2k60eeg4bo19VD29Ijas+8APNVzBzZ7E2ege62RVJQz3J2bN
+74r4tZTWnzWmdsW8GK/zvWvd+1frBu8q/7q5d0puT4c7zuy/3vL0peKmrPrbU4M1
+nRuvuAp888JKYQ8YPHIwO/fDwIy+edo+NLi6sj4pPWtsX2zyzWOTF4f6B+NOCNcP
+3VoLNyQPHsltr7fdf7Y0xkqd8E9Eg1z9wLrxzqahU/3fjPpCZj8LtOe0lcb/FD+Q
+M/Dd9srC1LszpsZ7f3TcWt65+3RCc9yPL/Wer1qYuFxey2Rac853NZ5dG1L7hXFn
+0RNbqkcioyZ0U/2OV5RJMeSFc4lv5rVatl3z1sUePXXjaO+A8m1NR96DpK7ndWUN
+5fnDuXUNVTlpDQ+TwrzVFzNWd5zcE7x5ntkyfqXtAA3fvzTcbfJnHU72fr+tI3PU
+kbbxI0vCZmvw71N7OyOOL9sd9XFL+kKtM3vIRid+HnJo+XM3Ch7tZ2Lul389+tur
+utTJny+rC/66+Il9baTY+knGg6+qmzt/Gb93OEHfoU9Jtd6JaVr6qKhkKkHse2vJ
+NBkwPGOfyfR/+nJ0e9wbhmFH3HsFI1XOg4WGimyLVDuWZht5Lf+DsUkj/frdres9
+ax4eC51zr79KpN1pja1bFaSGWv8GC7PELA==
+=FhnL
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gergelypolonkai
+
+==================================================================
+
