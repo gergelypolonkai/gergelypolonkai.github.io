@@ -9,7 +9,7 @@ name: Gergely Polonkai
 paginate: 10
 paginate_path: "/blog/page/:num"
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'CNAME', ".hyde.el"]
-include: ['.well-known/keybase.txt']
+include: ['.well-known']
 plugins:
   - jekyll-gist
   - jekyll-paginate
